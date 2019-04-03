@@ -49,6 +49,7 @@ public class Inicio extends JPanel {
 		JRadioButton btnCasa = new JRadioButton("Casa");
 		btnCasa.setBounds(100, 141, 60, 23);
 		add(btnCasa);
+		//jaja
 		
 		ButtonGroup grupo1 = new ButtonGroup();
 		grupo1.add(btnHotel);
