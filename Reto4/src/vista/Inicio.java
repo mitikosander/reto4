@@ -27,31 +27,27 @@ public class Inicio extends JPanel {
 		
 		txtBuscador = new JTextField();
 		txtBuscador.setText("Buscador");
-		txtBuscador.setBounds(174, 49, 86, 20);
+		txtBuscador.setBounds(140, 190, 86, 20);
 		add(txtBuscador);
 		txtBuscador.setColumns(10);
 		
 		
 		JButton btnNewButton = new JButton("Buscar");
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		btnNewButton.setBounds(302, 48, 78, 23);
+		btnNewButton.setBounds(140, 220, 78, 23);
 		add(btnNewButton);
-		
-		JLabel lblFiltros = new JLabel("Filtros");
-		lblFiltros.setBounds(33, 36, 46, 14);
-		add(lblFiltros);
 		String ciudad;
 		
 		JRadioButton btnHotel = new JRadioButton("Hotel");
-		btnHotel.setBounds(33, 55, 60, 23);
+		btnHotel.setBounds(100, 77, 60, 23);
 		add(btnHotel);
 		
 		JRadioButton btnApartamento = new JRadioButton("Apartamento");
-		btnApartamento.setBounds(33, 86, 100, 23);
+		btnApartamento.setBounds(100, 108, 100, 23);
 		add(btnApartamento);
 		
 		JRadioButton btnCasa = new JRadioButton("Casa");
-		btnCasa.setBounds(33, 119, 60, 23);
+		btnCasa.setBounds(100, 141, 60, 23);
 		add(btnCasa);
 		
 		ButtonGroup grupo1 = new ButtonGroup();
@@ -60,30 +56,22 @@ public class Inicio extends JPanel {
 		grupo1.add(btnCasa);
 		
 		JLabel lblPrecioMinimo = new JLabel("Precio minimo:");
-		lblPrecioMinimo.setBounds(10, 146, 68, 14);
+		lblPrecioMinimo.setBounds(234, 77, 68, 14);
 		add(lblPrecioMinimo);
 		
 		textField = new JTextField();
-		textField.setBounds(33, 163, 46, 20);
+		textField.setBounds(257, 94, 46, 20);
 		add(textField);
 		textField.setColumns(10);
 		
 		JLabel lblPrecioMaximo = new JLabel("Precio Maximo:");
-		lblPrecioMaximo.setBounds(10, 194, 83, 14);
+		lblPrecioMaximo.setBounds(234, 125, 83, 14);
 		add(lblPrecioMaximo);
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(33, 212, 46, 20);
+		textField_1.setBounds(257, 143, 46, 20);
 		add(textField_1);
 		textField_1.setColumns(10);
-		
-		JScrollBar scrollBar = new JScrollBar();
-		scrollBar.setBounds(263, 86, 17, 179);
-		add(scrollBar);
-		
-		JTextArea textArea = new JTextArea();
-		textArea.setBounds(152, 85, 128, 180);
-		add(textArea);
 		
 		
 
