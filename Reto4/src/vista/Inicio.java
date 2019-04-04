@@ -64,7 +64,7 @@ public class Inicio extends JPanel {
 		textField.setBounds(257, 94, 46, 20);
 		add(textField);
 		textField.setColumns(10);
-		//bebesita
+	
 		JLabel lblPrecioMaximo = new JLabel("Precio Maximo:");
 		lblPrecioMaximo.setBounds(234, 125, 83, 14);
 		add(lblPrecioMaximo);
