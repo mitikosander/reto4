@@ -74,7 +74,7 @@ public class Inicio extends JPanel {
 		
 		txtAquiVaEl = new JTextField();
 		txtAquiVaEl.setText("AQUI VA EL LOGO");
-		txtAquiVaEl.setBounds(87, 0, 301, 69);
+		txtAquiVaEl.setBounds(86, 11, 301, 58);
 		add(txtAquiVaEl);
 		txtAquiVaEl.setColumns(10);
 		
