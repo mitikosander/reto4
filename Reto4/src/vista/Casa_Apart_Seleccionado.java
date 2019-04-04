@@ -46,7 +46,7 @@ public class Casa_Apart_Seleccionado extends JPanel {
 		add(lblFechaDeSalida);
 		
 		JLabel lblPrecio = new JLabel("Precio:");
-		lblPrecio.setBounds(316, 227, 46, 14);
+		lblPrecio.setBounds(316, 227, 33, 14);
 		add(lblPrecio);
 		
 		JButton btnCancelar_CasaApart = new JButton("Cancelar");
