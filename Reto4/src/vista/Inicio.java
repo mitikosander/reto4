@@ -74,7 +74,7 @@ public class Inicio extends JPanel {
 		add(textField_1);
 		textField_1.setColumns(10);
 		
-		//Sigo probando
+		//Sigo probando 2
 
 	}
 }
