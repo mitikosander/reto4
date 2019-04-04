@@ -13,11 +13,11 @@ import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JComboBox;
 import javax.swing.JTextArea;
 import javax.swing.JScrollBar;
+import javax.swing.JSpinner;
 
 public class Inicio extends JPanel {
 	private JTextField txtBuscador;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField txtAquiVaEl;
 
 	/**
 	 * Create the panel.
@@ -27,27 +27,27 @@ public class Inicio extends JPanel {
 		
 		txtBuscador = new JTextField();
 		txtBuscador.setText("Buscador");
-		txtBuscador.setBounds(140, 190, 86, 20);
+		txtBuscador.setBounds(130, 77, 154, 20);
 		add(txtBuscador);
 		txtBuscador.setColumns(10);
 		
 		
 		JButton btnNewButton = new JButton("Buscar");
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		btnNewButton.setBounds(140, 220, 78, 23);
+		btnNewButton.setBounds(299, 76, 78, 23);
 		add(btnNewButton);
 		String ciudad;
 		
 		JRadioButton btnHotel = new JRadioButton("Hotel");
-		btnHotel.setBounds(100, 77, 60, 23);
+		btnHotel.setBounds(94, 133, 60, 23);
 		add(btnHotel);
 		
 		JRadioButton btnApartamento = new JRadioButton("Apartamento");
-		btnApartamento.setBounds(100, 108, 100, 23);
+		btnApartamento.setBounds(162, 133, 100, 23);
 		add(btnApartamento);
 		
 		JRadioButton btnCasa = new JRadioButton("Casa");
-		btnCasa.setBounds(100, 141, 60, 23);
+		btnCasa.setBounds(257, 133, 60, 23);
 		add(btnCasa);
 		
 		
@@ -57,24 +57,28 @@ public class Inicio extends JPanel {
 		grupo1.add(btnCasa);
 		
 		JLabel lblPrecioMinimo = new JLabel("Precio minimo:");
-		lblPrecioMinimo.setBounds(234, 77, 68, 14);
+		lblPrecioMinimo.setBounds(130, 178, 68, 14);
 		add(lblPrecioMinimo);
-		
-		textField = new JTextField();
-		textField.setBounds(257, 94, 46, 20);
-		add(textField);
-		textField.setColumns(10);
 	
 		JLabel lblPrecioMaximo = new JLabel("Precio Maximo:");
-		lblPrecioMaximo.setBounds(234, 125, 83, 14);
+		lblPrecioMaximo.setBounds(238, 178, 83, 14);
 		add(lblPrecioMaximo);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(257, 143, 46, 20);
-		add(textField_1);
-		textField_1.setColumns(10);
+		JSpinner spinner = new JSpinner();
+		spinner.setBounds(140, 203, 39, 20);
+		add(spinner);
 		
-		//Esta es la ultima prueba
+		JSpinner spinner_1 = new JSpinner();
+		spinner_1.setBounds(248, 203, 39, 20);
+		add(spinner_1);
+		
+		txtAquiVaEl = new JTextField();
+		txtAquiVaEl.setText("AQUI VA EL LOGO");
+		txtAquiVaEl.setBounds(87, 0, 301, 69);
+		add(txtAquiVaEl);
+		txtAquiVaEl.setColumns(10);
+		
+		
 
 	}
 }
