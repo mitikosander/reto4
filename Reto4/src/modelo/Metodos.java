@@ -21,7 +21,7 @@ public class Metodos {
 		String sql="SELECT * FROM HOTELES";
 		BBDD conexion=new BBDD();
 		h1 = null;
-		
+		//a
 		
 		try {
 			PreparedStatement ps=conexion.conectarBase().prepareStatement(sql);
