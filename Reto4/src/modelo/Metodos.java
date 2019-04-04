@@ -11,12 +11,16 @@ public class Metodos {
 	
 	
 	
+	private static ArrayList<modelo.Hotel> hoteles;
+	private static Hotel h1;
+
+
 	//Metodo para guardar los hoteles de la BBDD en un arraylist
-	private static ArrayList<modelo.hoteles> cargarHoteles(){
-		ArrayList<modelo.hoteles> hoteles = null;
+	private static ArrayList<modelo.Hotel> cargarHoteles(){
+		hoteles = null;
 		String sql="SELECT * FROM HOTELES";
 		BBDD conexion=new BBDD();
-		hoteles h1 = null;
+		h1 = null;
 		
 		
 		try {
@@ -51,7 +55,7 @@ public class Metodos {
 	
 	
 	//Metodo para generar el fichero de texto
-	private static void modificarfitxero() {
+	private static void modificarfichero() {
 		 FileWriter fichero = null;
        PrintWriter pw = null;
        try

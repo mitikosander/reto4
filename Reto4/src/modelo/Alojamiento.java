@@ -1,6 +1,6 @@
 package modelo;
 
-public class alojamiento {
+public class Alojamiento {
 
 	//ATRIBUTOS
     protected int num_habitaciones;
@@ -20,11 +20,11 @@ public class alojamiento {
 //: wifi, piscina, spa, parking, aire acondicionado, restaurante, bar y gimnasio
     
     //CONSTRUCTOR VACIO
-    public alojamiento() {
+    public Alojamiento() {
     }
     
     //CONSTRUCTOR
-    public alojamiento(int num_habitaciones, int num_camas,  String tipo_cama, String pension, String ubicacion, String nombre, boolean wifi,
+    public Alojamiento(int num_habitaciones, int num_camas,  String tipo_cama, String pension, String ubicacion, String nombre, boolean wifi,
      boolean piscina, boolean spa, boolean parking, boolean aire,boolean restaurante, boolean bar, boolean gimnasio) {
         this.num_habitaciones = num_habitaciones;
         this.num_camas = num_camas;
