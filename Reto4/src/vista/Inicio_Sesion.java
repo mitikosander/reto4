@@ -5,10 +5,11 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JPasswordField;
 
 public class Inicio_Sesion extends JPanel {
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField tf_Usuario_Inicio_Sesion;
+	private JPasswordField pf_Contra_Inicio_Sesion;
 
 	/**
 	 * Create the panel.
@@ -25,27 +26,26 @@ public class Inicio_Sesion extends JPanel {
 		lblNombreDeUsuario.setBounds(81, 90, 97, 14);
 		add(lblNombreDeUsuario);
 		
-		textField = new JTextField();
-		textField.setBounds(188, 87, 86, 20);
-		add(textField);
-		textField.setColumns(10);
+		tf_Usuario_Inicio_Sesion = new JTextField();
+		tf_Usuario_Inicio_Sesion.setBounds(188, 87, 86, 20);
+		add(tf_Usuario_Inicio_Sesion);
+		tf_Usuario_Inicio_Sesion.setColumns(10);
 		
 		JLabel lblContrasea = new JLabel("Contrase\u00F1a:");
 		lblContrasea.setBounds(81, 133, 97, 14);
 		add(lblContrasea);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(188, 130, 86, 20);
-		add(textField_1);
-		textField_1.setColumns(10);
+		JButton btnAceptar_Inicio_Sesion = new JButton("Aceptar");
+		btnAceptar_Inicio_Sesion.setBounds(243, 184, 89, 23);
+		add(btnAceptar_Inicio_Sesion);
 		
-		JButton btnAceptar = new JButton("Aceptar");
-		btnAceptar.setBounds(243, 184, 89, 23);
-		add(btnAceptar);
+		JButton btnCancelar_Inicio_Sesion = new JButton("Cancelar");
+		btnCancelar_Inicio_Sesion.setBounds(81, 184, 89, 23);
+		add(btnCancelar_Inicio_Sesion);
 		
-		JButton btnCancelar = new JButton("Cancelar");
-		btnCancelar.setBounds(81, 184, 89, 23);
-		add(btnCancelar);
+		pf_Contra_Inicio_Sesion = new JPasswordField();
+		pf_Contra_Inicio_Sesion.setBounds(188, 130, 86, 17);
+		add(pf_Contra_Inicio_Sesion);
 
 	}
 }
