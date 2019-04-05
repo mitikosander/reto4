@@ -17,6 +17,8 @@ public class Hotel_Seleccionado extends JPanel {
 	private JTextField tf_fentrada_Hotel;
 	private JTextField tf_fsalida_Hotel;
 	private JTextField tf_precio_Hotel;
+	private JButton btnReservar_Hotel;
+	private JButton btnCancelar_Hotel;
 
 	/**
 	 * Create the panel.
@@ -61,7 +63,7 @@ public class Hotel_Seleccionado extends JPanel {
 		add(tF_nombre_Hotel);
 		tF_nombre_Hotel.setColumns(10);
 		
-		JButton btnReservar_Hotel = new JButton("Reservar");
+		 btnReservar_Hotel = new JButton("Reservar");
 		btnReservar_Hotel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
@@ -69,7 +71,7 @@ public class Hotel_Seleccionado extends JPanel {
 		btnReservar_Hotel.setBounds(279, 252, 89, 23);
 		add(btnReservar_Hotel);
 		
-		JButton btnCancelar_Hotel = new JButton("Cancelar");
+		btnCancelar_Hotel = new JButton("Cancelar");
 		btnCancelar_Hotel.setBounds(73, 252, 89, 23);
 		add(btnCancelar_Hotel);
 		
@@ -109,4 +111,85 @@ public class Hotel_Seleccionado extends JPanel {
 		tf_precio_Hotel.setColumns(10);
 
 	}
+
+	public JTextField gettF_nombre_Hotel() {
+		return tF_nombre_Hotel;
+	}
+
+	public void settF_nombre_Hotel(JTextField tF_nombre_Hotel) {
+		this.tF_nombre_Hotel = tF_nombre_Hotel;
+	}
+
+	public JTextField getTf_mc_Hotel() {
+		return tf_mc_Hotel;
+	}
+
+	public void setTf_mc_Hotel(JTextField tf_mc_Hotel) {
+		this.tf_mc_Hotel = tf_mc_Hotel;
+	}
+
+	public JTextField getTf_ncamas_Hotel() {
+		return tf_ncamas_Hotel;
+	}
+
+	public void setTf_ncamas_Hotel(JTextField tf_ncamas_Hotel) {
+		this.tf_ncamas_Hotel = tf_ncamas_Hotel;
+	}
+
+	public JTextField getTf_nestrellas_Hotel() {
+		return tf_nestrellas_Hotel;
+	}
+
+	public void setTf_nestrellas_Hotel(JTextField tf_nestrellas_Hotel) {
+		this.tf_nestrellas_Hotel = tf_nestrellas_Hotel;
+	}
+
+	public JTextField getTf_ubicacion_Hotel() {
+		return tf_ubicacion_Hotel;
+	}
+
+	public void setTf_ubicacion_Hotel(JTextField tf_ubicacion_Hotel) {
+		this.tf_ubicacion_Hotel = tf_ubicacion_Hotel;
+	}
+
+	public JTextField getTf_fentrada_Hotel() {
+		return tf_fentrada_Hotel;
+	}
+
+	public void setTf_fentrada_Hotel(JTextField tf_fentrada_Hotel) {
+		this.tf_fentrada_Hotel = tf_fentrada_Hotel;
+	}
+
+	public JTextField getTf_fsalida_Hotel() {
+		return tf_fsalida_Hotel;
+	}
+
+	public void setTf_fsalida_Hotel(JTextField tf_fsalida_Hotel) {
+		this.tf_fsalida_Hotel = tf_fsalida_Hotel;
+	}
+
+	public JTextField getTf_precio_Hotel() {
+		return tf_precio_Hotel;
+	}
+
+	public void setTf_precio_Hotel(JTextField tf_precio_Hotel) {
+		this.tf_precio_Hotel = tf_precio_Hotel;
+	}
+
+	public JButton getBtnReservar_Hotel() {
+		return btnReservar_Hotel;
+	}
+
+	public void setBtnReservar_Hotel(JButton btnReservar_Hotel) {
+		this.btnReservar_Hotel = btnReservar_Hotel;
+	}
+
+	public JButton getBtnCancelar_Hotel() {
+		return btnCancelar_Hotel;
+	}
+
+	public void setBtnCancelar_Hotel(JButton btnCancelar_Hotel) {
+		this.btnCancelar_Hotel = btnCancelar_Hotel;
+	}
+	
 }

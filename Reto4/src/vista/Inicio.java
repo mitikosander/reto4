@@ -19,16 +19,19 @@ import com.toedter.calendar.JCalendar;
 public class Inicio extends JPanel {
 	private JTextField txtBuscador;
 	private JTextField txtAquiVaEl;
-	private JButton btnBuscarinicio;
-	private JRadioButton btnHotel;
+	private JButton btn_buscar_inicio;
 	private JRadioButton btnApartamento;
+	private JRadioButton btnHotel;
 	private JRadioButton btnCasa;
-	private ButtonGroup grupo1;
-	private JLabel lblPrecioMinimo;
-	private JLabel lblPrecioMaximo;
-	private JSpinner spinner;
-	private JSpinner spinner_1;
+	private JSpinner spinner_minimo;
+	private JSpinner spinner_maximo;
+	private JCalendar calendar_entrada;
+	private JCalendar calendar_salida;
+	private JSpinner spinner_ninios;
+	private JSpinner spinner_adultos;
+	private JSpinner spinner_habita;
 	
+
 	/**
 	 * Create the panel.
 	 */
@@ -42,48 +45,45 @@ public class Inicio extends JPanel {
 		txtBuscador.setColumns(10);
 		
 		
-		btnBuscarinicio = new JButton("Buscar");
-		btnBuscarinicio.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		btnBuscarinicio.setBounds(299, 76, 78, 23);
-		add(btnBuscarinicio);
-		String ciudad;
+		btn_buscar_inicio = new JButton("Buscar");
+		btn_buscar_inicio.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		btn_buscar_inicio.setBounds(299, 76, 78, 23);
+		add(btn_buscar_inicio);
 		
-
+		
 		btnHotel = new JRadioButton("Hotel");
-		btnHotel.setBounds(94, 133, 60, 23);
+		btnHotel.setBounds(116, 115, 60, 23);
 		add(btnHotel);
 		
 		btnApartamento = new JRadioButton("Apartamento");
-		btnApartamento.setBounds(162, 133, 100, 23);
+		btnApartamento.setBounds(210, 115, 100, 23);
 		add(btnApartamento);
 		
 		btnCasa = new JRadioButton("Casa");
-		btnCasa.setBounds(257, 133, 60, 23);
+		btnCasa.setBounds(334, 115, 60, 23);
 		add(btnCasa);
 		
 		
-		 grupo1 = new ButtonGroup();
+		ButtonGroup grupo1 = new ButtonGroup();
 		grupo1.add(btnHotel);
 		grupo1.add(btnApartamento);
 		grupo1.add(btnCasa);
 		
-
-		lblPrecioMinimo = new JLabel("Precio minimo:");
-		lblPrecioMinimo.setBounds(130, 178, 68, 14);
+		JLabel lblPrecioMinimo = new JLabel("Precio minimo:");
+		lblPrecioMinimo.setBounds(187, 145, 68, 14);
 		add(lblPrecioMinimo);
 	
-		 lblPrecioMaximo = new JLabel("Precio Maximo:");
-		lblPrecioMaximo.setBounds(238, 178, 83, 14);
+		JLabel lblPrecioMaximo = new JLabel("Precio Maximo:");
+		lblPrecioMaximo.setBounds(94, 145, 83, 14);
 		add(lblPrecioMaximo);
 		
-		 spinner = new JSpinner();
-		spinner.setBounds(140, 203, 39, 20);
-		add(spinner);
+		 spinner_minimo = new JSpinner();
+		spinner_minimo.setBounds(187, 180, 39, 20);
+		add(spinner_minimo);
 		
-		 spinner_1 = new JSpinner();
-		spinner_1.setBounds(248, 203, 39, 20);
-
-		add(spinner_1);
+		spinner_maximo = new JSpinner();
+		spinner_maximo.setBounds(94, 180, 39, 20);
+		add(spinner_maximo);
 		
 		txtAquiVaEl = new JTextField();
 		txtAquiVaEl.setText("AQUI VA EL LOGO");
@@ -99,136 +99,171 @@ public class Inicio extends JPanel {
 		lblFechaDeSalida.setBounds(299, 211, 96, 14);
 		add(lblFechaDeSalida);
 		
-		JCalendar calendar = new JCalendar();
-		calendar.setBounds(26, 230, 184, 153);
-		add(calendar);
+		calendar_entrada = new JCalendar();
+		calendar_entrada.setBounds(26, 230, 184, 153);
+		add(calendar_entrada);
 		
-		JCalendar calendar_1 = new JCalendar();
-		calendar_1.setBounds(299, 230, 184, 153);
-		add(calendar_1);
+		calendar_salida = new JCalendar();
+		calendar_salida.setBounds(299, 230, 184, 153);
+		add(calendar_salida);
 		
 		JLabel lblNios = new JLabel("Ni\u00F1os:");
 		lblNios.setBounds(264, 145, 46, 14);
 		add(lblNios);
 		
-		JSpinner spinner_2 = new JSpinner();
-		spinner_2.setBounds(264, 180, 29, 20);
-		add(spinner_2);
+		spinner_ninios = new JSpinner();
+		spinner_ninios.setBounds(264, 180, 29, 20);
+		add(spinner_ninios);
 		
 		JLabel lblAdultos = new JLabel("Adultos:");
 		lblAdultos.setBounds(320, 145, 46, 14);
 		add(lblAdultos);
 		
-		JSpinner spinner_3 = new JSpinner();
-		spinner_3.setBounds(320, 180, 29, 20);
-		add(spinner_3);
+		spinner_adultos = new JSpinner();
+		spinner_adultos.setBounds(320, 180, 29, 20);
+		add(spinner_adultos);
 		
 		JLabel lblHabitaciones = new JLabel("Habitaciones: ");
 		lblHabitaciones.setBounds(400, 145, 68, 14);
 		add(lblHabitaciones);
 		
-		JSpinner spinner_4 = new JSpinner();
-		spinner_4.setBounds(400, 180, 29, 20);
-		add(spinner_4);
+		spinner_habita = new JSpinner();
+		spinner_habita.setBounds(400, 180, 29, 20);
+		add(spinner_habita);
 		
 		
 
 	}
 
-	public JTextField getTxtBuscador() {
-		return txtBuscador;
-	}
-
-	public void setTxtBuscador(JTextField txtBuscador) {
-		this.txtBuscador = txtBuscador;
-	}
 
 	public JTextField getTxtBuscador() {
 		return txtBuscador;
 	}
 
+
 	public void setTxtBuscador(JTextField txtBuscador) {
 		this.txtBuscador = txtBuscador;
 	}
+
 
 	public JTextField getTxtAquiVaEl() {
 		return txtAquiVaEl;
 	}
 
+
 	public void setTxtAquiVaEl(JTextField txtAquiVaEl) {
 		this.txtAquiVaEl = txtAquiVaEl;
 	}
 
-	public JButton getBtnBuscarinicio() {
-		return btnBuscarinicio;
+
+	public JButton getBtn_buscar_inicio() {
+		return btn_buscar_inicio;
 	}
 
-	public void setBtnBuscarinicio(JButton btnBuscarinicio) {
-		this.btnBuscarinicio = btnBuscarinicio;
+
+	public void setBtn_buscar_inicio(JButton btn_buscar_inicio) {
+		this.btn_buscar_inicio = btn_buscar_inicio;
 	}
 
-	public JRadioButton getBtnHotel() {
-		return btnHotel;
-	}
-
-	public void setBtnHotel(JRadioButton btnHotel) {
-		this.btnHotel = btnHotel;
-	}
 
 	public JRadioButton getBtnApartamento() {
 		return btnApartamento;
 	}
 
+
 	public void setBtnApartamento(JRadioButton btnApartamento) {
 		this.btnApartamento = btnApartamento;
 	}
+
+
+	public JRadioButton getBtnHotel() {
+		return btnHotel;
+	}
+
+
+	public void setBtnHotel(JRadioButton btnHotel) {
+		this.btnHotel = btnHotel;
+	}
+
 
 	public JRadioButton getBtnCasa() {
 		return btnCasa;
 	}
 
+
 	public void setBtnCasa(JRadioButton btnCasa) {
 		this.btnCasa = btnCasa;
 	}
 
-	public ButtonGroup getGrupo1() {
-		return grupo1;
+
+	public JSpinner getSpinner_minimo() {
+		return spinner_minimo;
 	}
 
-	public void setGrupo1(ButtonGroup grupo1) {
-		this.grupo1 = grupo1;
+
+	public void setSpinner_minimo(JSpinner spinner_minimo) {
+		this.spinner_minimo = spinner_minimo;
 	}
 
-	public JLabel getLblPrecioMinimo() {
-		return lblPrecioMinimo;
+
+	public JSpinner getSpinner_maximo() {
+		return spinner_maximo;
 	}
 
-	public void setLblPrecioMinimo(JLabel lblPrecioMinimo) {
-		this.lblPrecioMinimo = lblPrecioMinimo;
+
+	public void setSpinner_maximo(JSpinner spinner_maximo) {
+		this.spinner_maximo = spinner_maximo;
 	}
 
-	public JLabel getLblPrecioMaximo() {
-		return lblPrecioMaximo;
+
+	public JCalendar getCalendar_entrada() {
+		return calendar_entrada;
 	}
 
-	public void setLblPrecioMaximo(JLabel lblPrecioMaximo) {
-		this.lblPrecioMaximo = lblPrecioMaximo;
+
+	public void setCalendar_entrada(JCalendar calendar_entrada) {
+		this.calendar_entrada = calendar_entrada;
 	}
 
-	public JSpinner getSpinner() {
-		return spinner;
+
+	public JCalendar getCalendar_salida() {
+		return calendar_salida;
 	}
 
-	public void setSpinner(JSpinner spinner) {
-		this.spinner = spinner;
+
+	public void setCalendar_salida(JCalendar calendar_salida) {
+		this.calendar_salida = calendar_salida;
 	}
 
-	public JSpinner getSpinner_1() {
-		return spinner_1;
+
+	public JSpinner getSpinner_ninios() {
+		return spinner_ninios;
 	}
 
-	public void setSpinner_1(JSpinner spinner_1) {
-		this.spinner_1 = spinner_1;
+
+	public void setSpinner_ninios(JSpinner spinner_ninios) {
+		this.spinner_ninios = spinner_ninios;
 	}
+
+
+	public JSpinner getSpinner_adultos() {
+		return spinner_adultos;
+	}
+
+
+	public void setSpinner_adultos(JSpinner spinner_adultos) {
+		this.spinner_adultos = spinner_adultos;
+	}
+
+
+	public JSpinner getSpinner_habita() {
+		return spinner_habita;
+	}
+
+
+	public void setSpinner_habita(JSpinner spinner_habita) {
+		this.spinner_habita = spinner_habita;
+	}
+
 	
 }

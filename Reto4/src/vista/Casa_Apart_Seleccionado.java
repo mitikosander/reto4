@@ -14,6 +14,8 @@ public class Casa_Apart_Seleccionado extends JPanel {
 	private JTextField tf_fentrada_CasaApart;
 	private JTextField tf_fsalida_CasaApart;
 	private JTextField tf_precio_CasaApart;
+	private JButton btnCancelar_CasaApart;
+	private JButton btnReservar_CasaApart;
 
 	/**
 	 * Create the panel.
@@ -49,11 +51,11 @@ public class Casa_Apart_Seleccionado extends JPanel {
 		lblPrecio.setBounds(316, 227, 33, 14);
 		add(lblPrecio);
 		
-		JButton btnCancelar_CasaApart = new JButton("Cancelar");
+		btnCancelar_CasaApart = new JButton("Cancelar");
 		btnCancelar_CasaApart.setBounds(37, 249, 89, 23);
 		add(btnCancelar_CasaApart);
 		
-		JButton btnReservar_CasaApart = new JButton("Reservar");
+		btnReservar_CasaApart = new JButton("Reservar");
 		btnReservar_CasaApart.setBounds(316, 252, 89, 23);
 		add(btnReservar_CasaApart);
 		
@@ -94,4 +96,77 @@ public class Casa_Apart_Seleccionado extends JPanel {
 
 	}
 
+	public JTextField getTf_ubicacion_CasaApart() {
+		return tf_ubicacion_CasaApart;
+	}
+
+	public void setTf_ubicacion_CasaApart(JTextField tf_ubicacion_CasaApart) {
+		this.tf_ubicacion_CasaApart = tf_ubicacion_CasaApart;
+	}
+
+	public JTextField getTf_mcuadrados_CasaApart() {
+		return tf_mcuadrados_CasaApart;
+	}
+
+	public void setTf_mcuadrados_CasaApart(JTextField tf_mcuadrados_CasaApart) {
+		this.tf_mcuadrados_CasaApart = tf_mcuadrados_CasaApart;
+	}
+
+	public JTextField getTf_ncamas_CasaApart() {
+		return tf_ncamas_CasaApart;
+	}
+
+	public void setTf_ncamas_CasaApart(JTextField tf_ncamas_CasaApart) {
+		this.tf_ncamas_CasaApart = tf_ncamas_CasaApart;
+	}
+
+	public JTextField getTf_tipohabita_CasaApart() {
+		return tf_tipohabita_CasaApart;
+	}
+
+	public void setTf_tipohabita_CasaApart(JTextField tf_tipohabita_CasaApart) {
+		this.tf_tipohabita_CasaApart = tf_tipohabita_CasaApart;
+	}
+
+	public JTextField getTf_fentrada_CasaApart() {
+		return tf_fentrada_CasaApart;
+	}
+
+	public void setTf_fentrada_CasaApart(JTextField tf_fentrada_CasaApart) {
+		this.tf_fentrada_CasaApart = tf_fentrada_CasaApart;
+	}
+
+	public JTextField getTf_fsalida_CasaApart() {
+		return tf_fsalida_CasaApart;
+	}
+
+	public void setTf_fsalida_CasaApart(JTextField tf_fsalida_CasaApart) {
+		this.tf_fsalida_CasaApart = tf_fsalida_CasaApart;
+	}
+
+	public JTextField getTf_precio_CasaApart() {
+		return tf_precio_CasaApart;
+	}
+
+	public void setTf_precio_CasaApart(JTextField tf_precio_CasaApart) {
+		this.tf_precio_CasaApart = tf_precio_CasaApart;
+	}
+
+	public JButton getBtnCancelar_CasaApart() {
+		return btnCancelar_CasaApart;
+	}
+
+	public void setBtnCancelar_CasaApart(JButton btnCancelar_CasaApart) {
+		this.btnCancelar_CasaApart = btnCancelar_CasaApart;
+	}
+
+	public JButton getBtnReservar_CasaApart() {
+		return btnReservar_CasaApart;
+	}
+
+	public void setBtnReservar_CasaApart(JButton btnReservar_CasaApart) {
+		this.btnReservar_CasaApart = btnReservar_CasaApart;
+	}
+
+	
 }

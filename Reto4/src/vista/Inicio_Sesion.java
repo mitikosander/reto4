@@ -10,6 +10,8 @@ import javax.swing.JPasswordField;
 public class Inicio_Sesion extends JPanel {
 	private JTextField tf_Usuario_Inicio_Sesion;
 	private JPasswordField pf_Contra_Inicio_Sesion;
+	private JButton btnAceptar_Inicio_Sesion;
+	private JButton btnCancelar_Inicio_Sesion;
 
 	/**
 	 * Create the panel.
@@ -35,11 +37,11 @@ public class Inicio_Sesion extends JPanel {
 		lblContrasea.setBounds(81, 133, 97, 14);
 		add(lblContrasea);
 		
-		JButton btnAceptar_Inicio_Sesion = new JButton("Aceptar");
+		btnAceptar_Inicio_Sesion = new JButton("Aceptar");
 		btnAceptar_Inicio_Sesion.setBounds(243, 184, 89, 23);
 		add(btnAceptar_Inicio_Sesion);
 		
-		JButton btnCancelar_Inicio_Sesion = new JButton("Cancelar");
+		btnCancelar_Inicio_Sesion = new JButton("Cancelar");
 		btnCancelar_Inicio_Sesion.setBounds(81, 184, 89, 23);
 		add(btnCancelar_Inicio_Sesion);
 		
@@ -48,4 +50,37 @@ public class Inicio_Sesion extends JPanel {
 		add(pf_Contra_Inicio_Sesion);
 
 	}
+
+	public JTextField getTf_Usuario_Inicio_Sesion() {
+		return tf_Usuario_Inicio_Sesion;
+	}
+
+	public void setTf_Usuario_Inicio_Sesion(JTextField tf_Usuario_Inicio_Sesion) {
+		this.tf_Usuario_Inicio_Sesion = tf_Usuario_Inicio_Sesion;
+	}
+
+	public JPasswordField getPf_Contra_Inicio_Sesion() {
+		return pf_Contra_Inicio_Sesion;
+	}
+
+	public void setPf_Contra_Inicio_Sesion(JPasswordField pf_Contra_Inicio_Sesion) {
+		this.pf_Contra_Inicio_Sesion = pf_Contra_Inicio_Sesion;
+	}
+
+	public JButton getBtnAceptar_Inicio_Sesion() {
+		return btnAceptar_Inicio_Sesion;
+	}
+
+	public void setBtnAceptar_Inicio_Sesion(JButton btnAceptar_Inicio_Sesion) {
+		this.btnAceptar_Inicio_Sesion = btnAceptar_Inicio_Sesion;
+	}
+
+	public JButton getBtnCancelar_Inicio_Sesion() {
+		return btnCancelar_Inicio_Sesion;
+	}
+
+	public void setBtnCancelar_Inicio_Sesion(JButton btnCancelar_Inicio_Sesion) {
+		this.btnCancelar_Inicio_Sesion = btnCancelar_Inicio_Sesion;
+	}
+	
 }
