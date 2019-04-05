@@ -5,19 +5,20 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.AbstractListModel;
 import javax.swing.ButtonGroup;
 import javax.swing.JRadioButton;
-import javax.swing.JRadioButtonMenuItem;
-import javax.swing.JComboBox;
-import javax.swing.JTextArea;
-import javax.swing.JScrollBar;
+
+
 
 public class Inicio extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField txtBuscador;
 	private JTextField textField;
 	private JTextField textField_1;
+	private JRadioButton btnHotel,btnApartamento,btnCasa;
 
 	/**
 	 * Create the panel.
@@ -38,15 +39,15 @@ public class Inicio extends JPanel {
 		add(btnNewButton);
 		String ciudad;
 		
-		JRadioButton btnHotel = new JRadioButton("Hotel");
+		 btnHotel = new JRadioButton("Hotel");
 		btnHotel.setBounds(100, 77, 60, 23);
 		add(btnHotel);
 		
-		JRadioButton btnApartamento = new JRadioButton("Apartamento");
+		 btnApartamento = new JRadioButton("Apartamento");
 		btnApartamento.setBounds(100, 108, 100, 23);
 		add(btnApartamento);
 		
-		JRadioButton btnCasa = new JRadioButton("Casa");
+		 btnCasa = new JRadioButton("Casa");
 		btnCasa.setBounds(100, 141, 60, 23);
 		add(btnCasa);
 		
@@ -77,4 +78,54 @@ public class Inicio extends JPanel {
 		//Esta es la ultima prueba
 
 	}
+
+	public JTextField getTxtBuscador() {
+		return txtBuscador;
+	}
+
+	public void setTxtBuscador(JTextField txtBuscador) {
+		this.txtBuscador = txtBuscador;
+	}
+
+	public JTextField getTextField() {
+		return textField;
+	}
+
+	public void setTextField(JTextField textField) {
+		this.textField = textField;
+	}
+
+	public JTextField getTextField_1() {
+		return textField_1;
+	}
+
+	public void setTextField_1(JTextField textField_1) {
+		this.textField_1 = textField_1;
+	}
+
+	public JRadioButton getBtnHotel() {
+		return btnHotel;
+	}
+
+	public void setBtnHotel(JRadioButton btnHotel) {
+		this.btnHotel = btnHotel;
+	}
+
+	public JRadioButton getBtnApartamento() {
+		return btnApartamento;
+	}
+
+	public void setBtnApartamento(JRadioButton btnApartamento) {
+		this.btnApartamento = btnApartamento;
+	}
+
+	public JRadioButton getBtnCasa() {
+		return btnCasa;
+	}
+
+	public void setBtnCasa(JRadioButton btnCasa) {
+		this.btnCasa = btnCasa;
+	}
+	
+	
 }
