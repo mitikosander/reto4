@@ -19,9 +19,43 @@ public class Vista {
 	}
 	
 	public  void mostrarPantalla(JPanel panel) {
-		ventana.frame.setContentPane(panel);
-		ventana.frame.setVisible(true);
+		ventana.setContentPane(panel);
+		ventana.setVisible(true);
 		
 	}
+
+	public Contenedor getVentana() {
+		return ventana;
+	}
+
+	public void setVentana(Contenedor ventana) {
+		this.ventana = ventana;
+	}
+
+	public Inicio getInicio() {
+		return inicio;
+	}
+
+	public void setInicio(Inicio inicio) {
+		this.inicio = inicio;
+	}
+
+	public Pagar getPagar() {
+		return pagar;
+	}
+
+	public void setPagar(Pagar pagar) {
+		this.pagar = pagar;
+	}
+
+	public Vueltas getVueltas() {
+		return vueltas;
+	}
+
+	public void setVueltas(Vueltas vueltas) {
+		this.vueltas = vueltas;
+	}
+	
+	
 	
 }

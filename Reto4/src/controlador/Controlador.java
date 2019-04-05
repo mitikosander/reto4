@@ -10,11 +10,19 @@ public class Controlador {
 	public Controlador(Vista vista, Modelo modelo) {
 		Controlador.vista = vista;
 		this.modelo = modelo;
+		
+		//Cargamos la pantalla principal
+		vista.mostrarPantalla(vista.getInicio());
+		
 		initalizeEvents();
+		
 	}
 
 	private void initalizeEvents() {
-
+	
+		
+		
+		
 	}
 
 }
