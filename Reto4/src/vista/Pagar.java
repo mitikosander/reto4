@@ -102,6 +102,7 @@ public class Pagar extends JPanel {
 	btnFinalizar.setBounds(357, 400, 89, 23);
 	add(btnFinalizar);
 	
+
 	
 
 
