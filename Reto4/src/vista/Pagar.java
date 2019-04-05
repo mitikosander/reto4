@@ -102,10 +102,7 @@ public class Pagar extends JPanel {
 	btnFinalizar.setBounds(357, 400, 89, 23);
 	add(btnFinalizar);
 	
-	label = new JLabel("");
-	label.setIcon(new ImageIcon(Pagar.class.getResource("/vista/fondo3.jpg")));
-	label.setBounds(0, 0, 500, 500);
-	add(label);
+
 	
 
 

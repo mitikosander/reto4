@@ -49,7 +49,7 @@ public class Inicio extends JPanel {
 		btn_buscar_inicio.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		btn_buscar_inicio.setBounds(299, 76, 78, 23);
 		add(btn_buscar_inicio);
-		String ciudad;
+		
 		
 		btnHotel = new JRadioButton("Hotel");
 		btnHotel.setBounds(116, 115, 60, 23);
