@@ -19,7 +19,16 @@ import com.toedter.calendar.JCalendar;
 public class Inicio extends JPanel {
 	private JTextField txtBuscador;
 	private JTextField txtAquiVaEl;
-
+	private JButton btnBuscarinicio;
+	private JRadioButton btnHotel;
+	private JRadioButton btnApartamento;
+	private JRadioButton btnCasa;
+	private ButtonGroup grupo1;
+	private JLabel lblPrecioMinimo;
+	private JLabel lblPrecioMaximo;
+	private JSpinner spinner;
+	private JSpinner spinner_1;
+	
 	/**
 	 * Create the panel.
 	 */
@@ -33,44 +42,47 @@ public class Inicio extends JPanel {
 		txtBuscador.setColumns(10);
 		
 		
-		JButton btnNewButton = new JButton("Buscar");
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		btnNewButton.setBounds(299, 76, 78, 23);
-		add(btnNewButton);
+		btnBuscarinicio = new JButton("Buscar");
+		btnBuscarinicio.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		btnBuscarinicio.setBounds(299, 76, 78, 23);
+		add(btnBuscarinicio);
 		String ciudad;
 		
-		JRadioButton btnHotel = new JRadioButton("Hotel");
-		btnHotel.setBounds(116, 115, 60, 23);
+
+		btnHotel = new JRadioButton("Hotel");
+		btnHotel.setBounds(94, 133, 60, 23);
 		add(btnHotel);
 		
-		JRadioButton btnApartamento = new JRadioButton("Apartamento");
-		btnApartamento.setBounds(210, 115, 100, 23);
+		btnApartamento = new JRadioButton("Apartamento");
+		btnApartamento.setBounds(162, 133, 100, 23);
 		add(btnApartamento);
 		
-		JRadioButton btnCasa = new JRadioButton("Casa");
-		btnCasa.setBounds(334, 115, 60, 23);
+		btnCasa = new JRadioButton("Casa");
+		btnCasa.setBounds(257, 133, 60, 23);
 		add(btnCasa);
 		
 		
-		ButtonGroup grupo1 = new ButtonGroup();
+		 grupo1 = new ButtonGroup();
 		grupo1.add(btnHotel);
 		grupo1.add(btnApartamento);
 		grupo1.add(btnCasa);
 		
-		JLabel lblPrecioMinimo = new JLabel("Precio minimo:");
-		lblPrecioMinimo.setBounds(187, 145, 68, 14);
+
+		lblPrecioMinimo = new JLabel("Precio minimo:");
+		lblPrecioMinimo.setBounds(130, 178, 68, 14);
 		add(lblPrecioMinimo);
 	
-		JLabel lblPrecioMaximo = new JLabel("Precio Maximo:");
-		lblPrecioMaximo.setBounds(94, 145, 83, 14);
+		 lblPrecioMaximo = new JLabel("Precio Maximo:");
+		lblPrecioMaximo.setBounds(238, 178, 83, 14);
 		add(lblPrecioMaximo);
 		
-		JSpinner spinner = new JSpinner();
-		spinner.setBounds(187, 180, 39, 20);
+		 spinner = new JSpinner();
+		spinner.setBounds(140, 203, 39, 20);
 		add(spinner);
 		
-		JSpinner spinner_1 = new JSpinner();
-		spinner_1.setBounds(94, 180, 39, 20);
+		 spinner_1 = new JSpinner();
+		spinner_1.setBounds(248, 203, 39, 20);
+
 		add(spinner_1);
 		
 		txtAquiVaEl = new JTextField();
@@ -130,4 +142,93 @@ public class Inicio extends JPanel {
 	public void setTxtBuscador(JTextField txtBuscador) {
 		this.txtBuscador = txtBuscador;
 	}
+
+	public JTextField getTxtBuscador() {
+		return txtBuscador;
+	}
+
+	public void setTxtBuscador(JTextField txtBuscador) {
+		this.txtBuscador = txtBuscador;
+	}
+
+	public JTextField getTxtAquiVaEl() {
+		return txtAquiVaEl;
+	}
+
+	public void setTxtAquiVaEl(JTextField txtAquiVaEl) {
+		this.txtAquiVaEl = txtAquiVaEl;
+	}
+
+	public JButton getBtnBuscarinicio() {
+		return btnBuscarinicio;
+	}
+
+	public void setBtnBuscarinicio(JButton btnBuscarinicio) {
+		this.btnBuscarinicio = btnBuscarinicio;
+	}
+
+	public JRadioButton getBtnHotel() {
+		return btnHotel;
+	}
+
+	public void setBtnHotel(JRadioButton btnHotel) {
+		this.btnHotel = btnHotel;
+	}
+
+	public JRadioButton getBtnApartamento() {
+		return btnApartamento;
+	}
+
+	public void setBtnApartamento(JRadioButton btnApartamento) {
+		this.btnApartamento = btnApartamento;
+	}
+
+	public JRadioButton getBtnCasa() {
+		return btnCasa;
+	}
+
+	public void setBtnCasa(JRadioButton btnCasa) {
+		this.btnCasa = btnCasa;
+	}
+
+	public ButtonGroup getGrupo1() {
+		return grupo1;
+	}
+
+	public void setGrupo1(ButtonGroup grupo1) {
+		this.grupo1 = grupo1;
+	}
+
+	public JLabel getLblPrecioMinimo() {
+		return lblPrecioMinimo;
+	}
+
+	public void setLblPrecioMinimo(JLabel lblPrecioMinimo) {
+		this.lblPrecioMinimo = lblPrecioMinimo;
+	}
+
+	public JLabel getLblPrecioMaximo() {
+		return lblPrecioMaximo;
+	}
+
+	public void setLblPrecioMaximo(JLabel lblPrecioMaximo) {
+		this.lblPrecioMaximo = lblPrecioMaximo;
+	}
+
+	public JSpinner getSpinner() {
+		return spinner;
+	}
+
+	public void setSpinner(JSpinner spinner) {
+		this.spinner = spinner;
+	}
+
+	public JSpinner getSpinner_1() {
+		return spinner_1;
+	}
+
+	public void setSpinner_1(JSpinner spinner_1) {
+		this.spinner_1 = spinner_1;
+	}
+	
 }
