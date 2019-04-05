@@ -22,8 +22,8 @@ public class Vista {
 	}
 	
 	public  void mostrarPantalla(JPanel panel) {
-		ventana.frame.setContentPane(panel);
-		ventana.frame.setVisible(true);
+		ventana.setContentPane(panel);
+		ventana.setVisible(true);
 		
 	}
 
@@ -58,6 +58,6 @@ public class Vista {
 	public void setVueltas(Vueltas vueltas) {
 		this.vueltas = vueltas;
 	}
-	
+
 	
 }

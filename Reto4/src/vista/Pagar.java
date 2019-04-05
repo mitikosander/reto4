@@ -102,9 +102,7 @@ public class Pagar extends JPanel {
 	btnFinalizar.setBounds(357, 400, 89, 23);
 	add(btnFinalizar);
 	
-	label = new JLabel("");
-	label.setBounds(0, 0, 500, 500);
-	add(label);
+
 	
 
 
