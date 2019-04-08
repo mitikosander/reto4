@@ -52,7 +52,7 @@ public class Metodos {
            pw = new PrintWriter(fichero);
 
            for (int i = 0; i < 10; i++) {
-           	pw.println("es de prueba");
+           	pw.println("lo que quieras");
                pw.println("Linea " + i);
            }
 

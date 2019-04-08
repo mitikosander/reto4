@@ -3,12 +3,15 @@ package vista;
 import javax.swing.JPanel;
 
 public class Vista {
-//Aqui crear la instancia en privado de los objetos de cada clase
+
+	
+	//Aqui crear la instancia en privado de los objetos de cada clase
 	private Contenedor ventana;
 	private Inicio inicio;
 	private Pagar pagar;
 	private Vueltas vueltas;
 	
+
 	
 	public Vista() {
 		//Aqui completamos la instancia del objeto para poder acceder a sus atributos
@@ -55,7 +58,6 @@ public class Vista {
 	public void setVueltas(Vueltas vueltas) {
 		this.vueltas = vueltas;
 	}
-	
-	
+
 	
 }

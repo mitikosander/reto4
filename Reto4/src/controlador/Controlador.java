@@ -1,5 +1,8 @@
 package controlador;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import modelo.Modelo;
 import vista.Vista;
 
@@ -19,10 +22,14 @@ public class Controlador {
 	}
 
 	private void initalizeEvents() {
-	
-		
-		
-		
+
+		vista.getInicio().getBtn_buscar_inicio().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				vista.mostrarPantalla(vista.getPagar());
+
+			}
+		});
+
 	}
 
 }
