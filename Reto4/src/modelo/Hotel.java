@@ -28,7 +28,4 @@ public class Hotel extends Alojamiento{
 		this.num_estrellas = num_estrellas;
 	}
 
-
-   
-
 }
