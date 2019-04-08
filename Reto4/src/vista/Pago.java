@@ -1,4 +1,4 @@
-package vista;
+	package vista;
 
 import javax.swing.JPanel;
 
