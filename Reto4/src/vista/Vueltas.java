@@ -26,15 +26,8 @@ public class Vueltas extends JDialog {
 	private final JLabel lblVueltas = new JLabel("Vueltas");
 	private static JTextArea txtDevolver;
 	private static double[] devolver = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-
-
-	/**
-	 * Launch the application.
-	 */
-
-	/**
-	 * Create the dialog.
-	 */
+	
+	
 	public Vueltas() {
 		setBounds(100, 100, 450, 300);
 		
