@@ -23,7 +23,7 @@ public class Controlador {
 
 	private void initalizeEvents() {
 
-		vista.getInicio().getBtnBuscarinicio().addActionListener(new ActionListener() {
+		vista.getInicio().getBtn_buscar_inicio().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				vista.mostrarPantalla(vista.getPagar());
 
