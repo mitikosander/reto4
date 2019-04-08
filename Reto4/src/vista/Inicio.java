@@ -7,14 +7,7 @@ import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.ButtonGroup;
 import javax.swing.JRadioButton;
-
-
-
-
-import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JComboBox;
-import javax.swing.JTextArea;
-import javax.swing.JScrollBar;
 import javax.swing.JSpinner;
 import com.toedter.calendar.JCalendar;
 
@@ -38,7 +31,7 @@ public class Inicio extends JPanel {
 	private JSpinner spinner_ninios;
 	private JSpinner spinner_adultos;
 	private JSpinner spinner_habita;
-	
+	private JComboBox<String> combo_ubicacion;
 
 
 	/**
@@ -134,12 +127,12 @@ public class Inicio extends JPanel {
 		spinner_habita.setBounds(400, 180, 29, 20);
 		add(spinner_habita);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(134, 77, 158, 23);
-		add(comboBox);
-		comboBox.addItem("uno");
-		comboBox.addItem("dos");
-		comboBox.addItem("tres");
+		combo_ubicacion = new JComboBox();
+		combo_ubicacion.setBounds(134, 77, 158, 23);
+		add(combo_ubicacion);
+		combo_ubicacion.addItem("uno");
+		combo_ubicacion.addItem("dos");
+		combo_ubicacion.addItem("tres");
 		
 		
 
@@ -275,5 +268,17 @@ public class Inicio extends JPanel {
 	public void setSpinner_habita(JSpinner spinner_habita) {
 		this.spinner_habita = spinner_habita;
 	}
+
+
+	public JComboBox<String> getCombo_ubicacion() {
+		return getCombo_ubicacion();
+	}
+
+
+	public void setCombo_ubicacion(JComboBox<String> combo_ubicacion) {
+		this.combo_ubicacion = combo_ubicacion;
+	}
+	
+	
 
 }

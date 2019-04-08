@@ -25,11 +25,14 @@ public class Controlador {
 
 		vista.getInicio().getBtn_buscar_inicio().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				modelo.getMetodos().buscarAlojamientos();
 				vista.mostrarPantalla(vista.getPagar());
-
+			
 			}
 		});
 
+		
+		
 	}
 
 }
