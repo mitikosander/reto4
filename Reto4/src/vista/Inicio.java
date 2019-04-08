@@ -5,10 +5,12 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.AbstractListModel;
 import javax.swing.ButtonGroup;
 import javax.swing.JRadioButton;
+
+
+
+
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JComboBox;
 import javax.swing.JTextArea;
@@ -16,7 +18,14 @@ import javax.swing.JScrollBar;
 import javax.swing.JSpinner;
 import com.toedter.calendar.JCalendar;
 
+
 public class Inicio extends JPanel {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private JTextField txtBuscador;
 	private JTextField txtAquiVaEl;
 	private JButton btn_buscar_inicio;
 	private JRadioButton btnApartamento;
@@ -31,6 +40,7 @@ public class Inicio extends JPanel {
 	private JSpinner spinner_habita;
 	
 
+
 	/**
 	 * Create the panel.
 	 */
@@ -43,18 +53,18 @@ public class Inicio extends JPanel {
 		btn_buscar_inicio.setBounds(405, 392, 78, 23);
 		add(btn_buscar_inicio);
 		
+
 		
 		btnHotel = new JRadioButton("Hotel");
 		btnHotel.setBounds(116, 115, 60, 23);
-		add(btnHotel);
+
 		
 		btnApartamento = new JRadioButton("Apartamento");
 		btnApartamento.setBounds(210, 115, 100, 23);
-		add(btnApartamento);
-		
+
 		btnCasa = new JRadioButton("Casa");
 		btnCasa.setBounds(334, 115, 60, 23);
-		add(btnCasa);
+
 		
 		
 		ButtonGroup grupo1 = new ButtonGroup();
@@ -133,6 +143,16 @@ public class Inicio extends JPanel {
 		
 		
 
+	}
+
+
+	public JTextField getTxtBuscador() {
+		return txtBuscador;
+	}
+
+
+	public void setTxtBuscador(JTextField txtBuscador) {
+		this.txtBuscador = txtBuscador;
 	}
 
 
@@ -255,4 +275,5 @@ public class Inicio extends JPanel {
 	public void setSpinner_habita(JSpinner spinner_habita) {
 		this.spinner_habita = spinner_habita;
 	}
+
 }
