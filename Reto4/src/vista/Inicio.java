@@ -17,7 +17,6 @@ import javax.swing.JSpinner;
 import com.toedter.calendar.JCalendar;
 
 public class Inicio extends JPanel {
-	private JTextField txtBuscador;
 	private JTextField txtAquiVaEl;
 	private JButton btn_buscar_inicio;
 	private JRadioButton btnApartamento;
@@ -38,16 +37,10 @@ public class Inicio extends JPanel {
 	public Inicio() {
 		setLayout(null);
 		
-		txtBuscador = new JTextField();
-		txtBuscador.setText("Buscador");
-		txtBuscador.setBounds(130, 77, 154, 20);
-		add(txtBuscador);
-		txtBuscador.setColumns(10);
-		
 		
 		btn_buscar_inicio = new JButton("Buscar");
 		btn_buscar_inicio.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		btn_buscar_inicio.setBounds(299, 76, 78, 23);
+		btn_buscar_inicio.setBounds(405, 392, 78, 23);
 		add(btn_buscar_inicio);
 		
 		
@@ -131,19 +124,17 @@ public class Inicio extends JPanel {
 		spinner_habita.setBounds(400, 180, 29, 20);
 		add(spinner_habita);
 		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(134, 77, 158, 23);
+		add(comboBox);
+		comboBox.addItem("uno");
+		comboBox.addItem("dos");
+		comboBox.addItem("tres");
+		
 		
 
 	}
 
-
-	public JTextField getTxtBuscador() {
-		return txtBuscador;
-	}
-
-
-	public void setTxtBuscador(JTextField txtBuscador) {
-		this.txtBuscador = txtBuscador;
-	}
 
 
 	public JTextField getTxtAquiVaEl() {
@@ -264,6 +255,4 @@ public class Inicio extends JPanel {
 	public void setSpinner_habita(JSpinner spinner_habita) {
 		this.spinner_habita = spinner_habita;
 	}
-
-	
 }
