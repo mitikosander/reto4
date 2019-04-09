@@ -94,7 +94,7 @@ public class Metodos {
 	}
 	
 	
-	//Metodo para generar el fichero de texto
+	//Metodo para generar un fichero de texto
 	private static void modificarfichero() {
 		 FileWriter fichero = null;
        PrintWriter pw = null;
