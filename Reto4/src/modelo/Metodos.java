@@ -12,10 +12,38 @@ import vista.Vista;
 public class Metodos {
 	
 	
+
+	
 	
 	private static ArrayList<modelo.Alojamiento> busquedas;
-	
+	private static ArrayList<String> ciudades;
 
+	
+	//metodo para guardar el nombre de las ciudades en un arraylist con el que cargaremos el combobox
+	
+	public  ArrayList<String> cargarciudades(){
+		ciudades = null;
+		String sql="SELECT ubicacion FROM hoteles";
+		String flag=null;
+		BBDD conectar=new BBDD();
+		int cont=0;
+		try {
+			PreparedStatement ps=conectar.conectarBase().prepareStatement(sql);
+			ResultSet rs=ps.executeQuery();
+			
+			while(rs.next()) {
+				flag=rs.getString(cont);
+				ciudades.add(flag);
+				cont++;
+				
+			}
+		}catch(SQLException e) {
+			System.err.println("Consulta erronea, motivo del erro: "+e);
+		}
+		
+		return ciudades;
+		
+	}
 
 	//Metodo para buscar alojamiento segun los valores indicados en la busqueda
 	public  ArrayList<modelo.Alojamiento> buscarAlojamientos(){
