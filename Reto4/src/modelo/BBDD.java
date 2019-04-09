@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 public class BBDD {
     //Declaramos los datos para la conexion
-    static String passBBDD="";
-    static String userBBDD="root";
-    final static String NOMBREBBDD="ejer1";
+    static String passBBDD="admin";
+    static String userBBDD="admin";
+    final static String NOMBREBBDD="reto4";
     final static String IPBBDD="127.0.0.1";
     static String rutaBBDD="jdbc:mysql:/"+IPBBDD+"/"+NOMBREBBDD+"?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     
