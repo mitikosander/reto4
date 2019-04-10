@@ -61,5 +61,5 @@ public class Bases_Legales extends JPanel {
 	        frame.setLocationRelativeTo(null);
 	        frame.setVisible(true);
 	}
-	
+	//ñ
 }
