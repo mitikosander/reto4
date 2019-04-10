@@ -15,12 +15,10 @@ public class Vista {
 	private Datos_Personas datos_personas;
 	private Hotel_Seleccionado hotel_seleccionado;
 	private Inicio_Sesion inicio_sesion;
-	private Mostrar_Lista mostrar_lista;
+	private Mostrar_Lista listahoteles;
 	private Pago pago;
 	private Reserva reserva;
 	
-	
-
 	
 	public Vista() {
 		//Aqui completamos la instancia del objeto para poder acceder a sus atributos
@@ -28,12 +26,12 @@ public class Vista {
 		inicio=new Inicio();
 		pagar=new Pagar();
 		vueltas=new Vueltas();
+		listahoteles=new Mostrar_Lista();
 		bases_legales=new Bases_Legales();
 		casa_apart_seleccionado=new Casa_Apart_Seleccionado();
 		datos_personas = new Datos_Personas();
 		hotel_seleccionado = new Hotel_Seleccionado();
 		inicio_sesion = new Inicio_Sesion();
-		mostrar_lista = new Mostrar_Lista();
 		pago = new Pago();
 		reserva = new Reserva();
 	}
@@ -76,6 +74,15 @@ public class Vista {
 		this.vueltas = vueltas;
 	}
 
+	public Mostrar_Lista getListahoteles() {
+		return listahoteles;
+	}
+
+	public void setListahoteles(Mostrar_Lista listahoteles) {
+		this.listahoteles = listahoteles;
+	}
+
+	
 	public Bases_Legales getBases_legales() {
 		return bases_legales;
 	}
@@ -116,14 +123,6 @@ public class Vista {
 		this.inicio_sesion = inicio_sesion;
 	}
 
-	public Mostrar_Lista getMostrar_lista() {
-		return mostrar_lista;
-	}
-
-	public void setMostrar_lista(Mostrar_Lista mostrar_lista) {
-		this.mostrar_lista = mostrar_lista;
-	}
-
 	public Pago getPago() {
 		return pago;
 	}
@@ -140,5 +139,4 @@ public class Vista {
 		this.reserva = reserva;
 	}
 
-	
 }
