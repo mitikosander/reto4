@@ -16,6 +16,9 @@ import javax.swing.JButton;
 import java.awt.BorderLayout;
 
 public class Bases_Legales extends JPanel {
+	private  JRadioButton rdbtnNewRadioButton;
+	private  JButton btnSiguiente_Blegales;
+	
 
 	/**
 	 * Create the panel.
@@ -42,11 +45,11 @@ public class Bases_Legales extends JPanel {
 	        lblterminos.setBounds(0, 329, 390, 14);
 	        bigPane.add(lblterminos);
 	        
-	        JRadioButton rdbtnNewRadioButton = new JRadioButton("New radio button");
+	        rdbtnNewRadioButton = new JRadioButton("New radio button");
 	        rdbtnNewRadioButton.setBounds(142, 325, 18, 23);
 	        bigPane.add(rdbtnNewRadioButton);
 	        
-	        JButton btnSiguiente_Blegales = new JButton("Siguiente");
+	        btnSiguiente_Blegales = new JButton("Siguiente");
 	        btnSiguiente_Blegales.setBounds(275, 336, 89, 23);
 	        bigPane.add(btnSiguiente_Blegales);
 	        scrollPane.setPreferredSize(new Dimension(390, 390));
@@ -58,4 +61,5 @@ public class Bases_Legales extends JPanel {
 	        frame.setLocationRelativeTo(null);
 	        frame.setVisible(true);
 	}
+	//ñk
 }
