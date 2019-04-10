@@ -6,8 +6,8 @@ import java.sql.SQLException;
 
 public class BBDD {
     //Declaramos los datos para la conexion
-    static String passBBDD="admin";
-    static String userBBDD="admin";
+    static String passBBDD="koldo";
+    static String userBBDD="koldo";
     final static String NOMBREBBDD="reto4";
     final static String IPBBDD="127.0.0.1";
     static String rutaBBDD="jdbc:mysql:/"+IPBBDD+"/"+NOMBREBBDD+"?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
@@ -36,7 +36,7 @@ public class BBDD {
 			return conexion;
 			
 		} catch (SQLException e) {
-			System.err.println("Error en la conexion");
+			System.err.println("Error en la conexion" +e);
 			return null;
 		}
 	
