@@ -6,6 +6,7 @@ import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 import javax.swing.border.CompoundBorder;
 import javax.swing.JLabel;
+import javax.swing.JButton;
 
 public class Mostrar_Lista extends JPanel {
 	private JTable table;
@@ -18,12 +19,20 @@ public class Mostrar_Lista extends JPanel {
 		
 		table = new JTable();
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		table.setBounds(42, 37, 376, 329);
+		table.setBounds(42, 37, 380, 303);
 		add(table);
 		
 		JLabel lblListaDeHoteles = new JLabel("Lista de Hoteles");
 		lblListaDeHoteles.setBounds(176, 11, 85, 14);
 		add(lblListaDeHoteles);
+		
+		JButton btnaceptar_mostrar_lista = new JButton("Aceptar");
+		btnaceptar_mostrar_lista.setBounds(333, 351, 89, 23);
+		add(btnaceptar_mostrar_lista);
+		
+		JButton btnCancelar_mostrar_lista = new JButton("Cancelar");
+		btnCancelar_mostrar_lista.setBounds(42, 351, 89, 23);
+		add(btnCancelar_mostrar_lista);
 
 	}
 }
