@@ -1,6 +1,6 @@
 package modelo;
 
-public class alojamiento {
+public class Alojamiento {
 
 	//ATRIBUTOS
     protected int num_habitaciones;
@@ -17,15 +17,16 @@ public class alojamiento {
     protected boolean restaurante;
     protected boolean bar;
     protected boolean gimnasio;
+    protected double precio;
 //: wifi, piscina, spa, parking, aire acondicionado, restaurante, bar y gimnasio
     
     //CONSTRUCTOR VACIO
-    public alojamiento() {
+    public Alojamiento() {
     }
     
     //CONSTRUCTOR
-    public alojamiento(int num_habitaciones, int num_camas,  String tipo_cama, String pension, String ubicacion, String nombre, boolean wifi,
-     boolean piscina, boolean spa, boolean parking, boolean aire,boolean restaurante, boolean bar, boolean gimnasio) {
+    public Alojamiento(int num_habitaciones, int num_camas,  String tipo_cama, String pension, String ubicacion, String nombre, boolean wifi,
+     boolean piscina, boolean spa, boolean parking, boolean aire,boolean restaurante, boolean bar, boolean gimnasio, double precio) {
         this.num_habitaciones = num_habitaciones;
         this.num_camas = num_camas;
         this.tipo_cama = tipo_cama;
@@ -40,6 +41,7 @@ public class alojamiento {
         this.restaurante = restaurante;
         this.bar = bar;
         this.gimnasio = gimnasio;
+        this.precio=precio;
     }
     
     public int getNum_habitaciones() {
@@ -152,6 +154,14 @@ public class alojamiento {
 
 	public void setGimnasio(boolean gimnasio) {
 		this.gimnasio = gimnasio;
+	}
+
+	public double getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(double precio) {
+		this.precio = precio;
 	}
 
 
