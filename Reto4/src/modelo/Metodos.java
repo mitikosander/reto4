@@ -12,24 +12,76 @@ import vista.Vista;
 public class Metodos {
 	
 	
+
+	
 	
 	private static ArrayList<modelo.Alojamiento> busquedas;
-	
+	private static ArrayList<String> ciudades;
 
+	
+	//metodo para guardar el nombre de las ciudades en un arraylist con el que cargaremos el combobox
+	
+	public  ArrayList<String> cargarciudades(){
+		ciudades = null;
+		String sql="SELECT ubicacion FROM hoteles";
+		String flag=null;
+		BBDD conectar=new BBDD();
+		int cont=0;
+		try {
+			PreparedStatement ps=conectar.conectarBase().prepareStatement(sql);
+			ResultSet rs=ps.executeQuery();
+			
+			while(rs.next()) {
+				flag=rs.getString(cont);
+				ciudades.add(flag);
+				cont++;
+				
+			}
+		}catch(SQLException e) {
+			System.err.println("Consulta erronea, motivo del erro: "+e);
+		}
+		
+		return ciudades;
+		
+	}
 
 	//Metodo para buscar alojamiento segun los valores indicados en la busqueda
-	private static ArrayList<modelo.Alojamiento> buscarAlojamientos(){
-	String sql="";
+	public  ArrayList<modelo.Alojamiento> buscarAlojamientos(){
+	Vista vista=new Vista();
+	String sql="SELECT * FROM hoteles WHERE ubicacion LIKE '"+vista.getInicio().getCombo_ubicacion()+"'";
 	BBDD conectar=new BBDD();
 	busquedas=null;
 	Alojamiento a1=new Alojamiento();
 	try {
+		if(vista.getInicio().getCombo_ubicacion().getSelectedItem()!=null) {
 		PreparedStatement ps=conectar.conectarBase().prepareStatement(sql);
 		ResultSet rs=ps.executeQuery();
-		
 		while(rs.next()) {
+			
+			
+			a1.setNum_habitaciones(rs.getInt(1));
+			a1.setNum_camas(rs.getInt(2));
+			a1.setTipo_cama(rs.getString(3));
+			a1.setPension(rs.getString(4));
+			a1.setUbicacion(rs.getString(5));
+			a1.setNombre(rs.getString(6));
+			a1.setWifi(rs.getBoolean(7));
+			a1.setPiscina(rs.getBoolean(8));
+			a1.setSpa(rs.getBoolean(9));
+			a1.setParking(rs.getBoolean(10));
+			a1.setAire(rs.getBoolean(11));
+			a1.setRestaurante(rs.getBoolean(12));
+			a1.setBar(rs.getBoolean(13));
+			a1.setGimnasio(rs.getBoolean(14));
+			a1.setPrecio(rs.getDouble(16));
 			busquedas.add(a1);
+			
 		}
+		System.out.println("Lista cargada");
+		}else {
+			System.err.println("Error al cargar la lista, Ubicacion nula");
+		}
+	
 	}catch(SQLException e) {
 		System.err.println("Conexion fallida, causa del error: "+ e);
 	}
@@ -42,7 +94,7 @@ public class Metodos {
 	}
 	
 	
-	//Metodo para generar el fichero de texto
+	//Metodo para generar un fichero de texto
 	private static void modificarfichero() {
 		 FileWriter fichero = null;
        PrintWriter pw = null;
