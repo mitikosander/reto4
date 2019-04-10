@@ -10,8 +10,8 @@ public class Vista {
 	private Inicio inicio;
 	private Pagar pagar;
 	private Vueltas vueltas;
+	private Mostrar_Lista listahoteles;
 	
-
 	
 	public Vista() {
 		//Aqui completamos la instancia del objeto para poder acceder a sus atributos
@@ -19,6 +19,7 @@ public class Vista {
 		inicio=new Inicio();
 		pagar=new Pagar();
 		vueltas=new Vueltas();
+		listahoteles=new Mostrar_Lista();
 	}
 	
 	public  void mostrarPantalla(JPanel panel) {
@@ -59,5 +60,14 @@ public class Vista {
 		this.vueltas = vueltas;
 	}
 
+	public Mostrar_Lista getListahoteles() {
+		return listahoteles;
+	}
+
+	public void setListahoteles(Mostrar_Lista listahoteles) {
+		this.listahoteles = listahoteles;
+	}
+
+	
 	
 }

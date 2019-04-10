@@ -92,7 +92,27 @@ public class Metodos {
 		
 	
 	}
+
 	
+	public double cargarPrecioHotelSelecc(String nombrehotel){
+		double precio=0;
+		
+		String sql="SELECT precio FROM hoteles WHERE nombre LIKE '"+nombrehotel+"'";
+		BBDD conectar=new BBDD();
+		
+		try {
+			PreparedStatement ps=conectar.conectarBase().prepareStatement(sql);
+			ResultSet rs=ps.executeQuery();
+			
+			while(rs.next()) {
+				precio=rs.getDouble(0);
+			}
+		}catch(SQLException e) {
+			System.err.println("Conexion fallida, causa del error:" +e);
+		}
+		
+		return precio;
+	}
 	
 	//Metodo para generar un fichero de texto
 	private static void modificarfichero() {
@@ -122,6 +142,8 @@ public class Metodos {
        }
 	
 	}
+	
+	
 	
 	
 	

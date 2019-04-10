@@ -3,6 +3,7 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.List;
 
 import modelo.Modelo;
 import vista.Vista;
@@ -10,7 +11,7 @@ import vista.Vista;
 public class Controlador {
 	private static Vista vista;
 	private Modelo modelo;
-
+	private ArrayList<modelo.Alojamiento> alojamientos;
 	public Controlador(Vista vista, Modelo modelo) {
 		Controlador.vista = vista;
 		this.modelo = modelo;
@@ -28,17 +29,23 @@ public class Controlador {
 
 		vista.getInicio().getBtn_buscar_inicio().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				modelo.getMetodos().buscarAlojamientos();
+				alojamientos=modelo.getMetodos().buscarAlojamientos();
+				//Tras la busqueda inicial vamos a la pantall de seleccion de hoteles
 				vista.mostrarPantalla(vista.getPagar());
 			
 			}
 		});
-
+		
+		//desde la pantalla de seleccion de hoteles cargamos el precio desde un metodo en modelo,
+		//y pasamos ese valor a la pantalla de pago para proceder a este
+		
+		
 		
 		
 	}
 	
 	//Metodo para rellenar el combobox con los datos consultados a la BBDD
+	
 	private void rellenarComboUbicaciones() {
 
 		ArrayList<String> nombreParadas = modelo.getMetodos().cargarciudades();
@@ -47,6 +54,20 @@ public class Controlador {
 		for (int i = 0; i < nombreParadas.size(); i++) {
 			vista.getInicio().getCombo_ubicacion().addItem(nombreParadas.get(i));
 		}
+	}
+	
+	//Metodo para rellenar la tabla con los nombres y precios de los hoteles
+	private void rellenarTablaHoteles(ArrayList<modelo.Alojamiento> alojamientos) {
+		List<String> columnas=new ArrayList<String>();
+		
+		columnas.add("Nombre: ");
+		columnas.add("Precio");
+		
+		for(int i=0;i<alojamientos.size();i++) {
+			
+		}
+		
+		
 	}
 
 }
