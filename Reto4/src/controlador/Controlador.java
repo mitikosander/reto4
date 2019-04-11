@@ -18,11 +18,12 @@ public class Controlador {
 		Controlador.vista = vista;
 		this.modelo = modelo;
 		
-		//Cargamos la pantalla principal
-		vista.mostrarPantalla(vista.getInicio());
+		//Cargamos la pantalla principal y el combo con las ubicaciones
 		
-		//Cargamos el comboBox con las ciudades
+		vista.mostrarPantalla(vista.getInicio());
 		rellenarComboUbicaciones();
+	
+		
 		initalizeEvents();
 		
 	}
@@ -34,7 +35,7 @@ public class Controlador {
 				alojamientos=modelo.getMetodos().buscarAlojamientos();
 				//Tras la busqueda inicial vamos a la pantall de seleccion de hoteles
 				vista.mostrarPantalla(vista.getPagar());
-			
+				
 			}
 		});
 		
@@ -50,10 +51,10 @@ public class Controlador {
 	
 	private void rellenarComboUbicaciones() {
 
-		ArrayList<String> nombreParadas = modelo.getMetodos().cargarciudades();
-
+		ArrayList<String> nombreParadas =modelo.getMetodos().cargarciudades();
+		
 		// Rellenar las paradas
-		for (int i = 0; i < nombreParadas.size(); i++) {
+		for (int i = 0; i <nombreParadas.size(); i++) {
 			vista.getInicio().getCombo_ubicacion().addItem(nombreParadas.get(i));
 		}
 	}

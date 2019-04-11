@@ -15,33 +15,39 @@ public class Metodos {
 
 	
 	
-	private static ArrayList<modelo.Alojamiento> busquedas;
-	private static ArrayList<String> ciudades;
+	private  ArrayList<modelo.Alojamiento> busquedas;
+	private  ArrayList<String> ciudades;
+	
+	
 
 	
 	//metodo para guardar el nombre de las ciudades en un arraylist con el que cargaremos el combobox
 	
 	public  ArrayList<String> cargarciudades(){
-		ciudades = null;
+		ciudades = new ArrayList<String>();
 		String sql="SELECT ubicacion FROM hoteles";
-		String flag=null;
 		BBDD conectar=new BBDD();
-		int cont=0;
+		String flag;
+		
 		try {
 			PreparedStatement ps=conectar.conectarBase().prepareStatement(sql);
 			ResultSet rs=ps.executeQuery();
 			
 			while(rs.next()) {
-				flag=rs.getString(cont);
+				
+				flag=rs.getString(1);
 				ciudades.add(flag);
-				cont++;
+				
 				
 			}
+			
+			return ciudades;
 		}catch(SQLException e) {
-			System.err.println("Consulta erronea, motivo del erro: "+e);
+			System.err.println("Consulta erronea, motivo del error: "+e);
+			return ciudades=null;
 		}
 		
-		return ciudades;
+		
 		
 	}
 

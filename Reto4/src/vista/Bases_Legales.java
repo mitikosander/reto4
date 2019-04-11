@@ -58,12 +58,7 @@ public class Bases_Legales extends JPanel {
 	        bigPane.add(btnSiguiente_Blegales);
 	        scrollPane.setPreferredSize(new Dimension(390, 390));
 
-	        JFrame frame = new JFrame("TERMINOS LEGALES");
-	        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	        frame.getContentPane().add(scrollPane);
-	        frame.pack();
-	        frame.setLocationRelativeTo(null);
-	        frame.setVisible(true);
+	        
 	}
-	//ñk
+	
 }

@@ -127,12 +127,10 @@ public class Inicio extends JPanel {
 		spinner_habita.setBounds(400, 180, 29, 20);
 		add(spinner_habita);
 		
-		combo_ubicacion = new JComboBox();
+		combo_ubicacion = new JComboBox<String>();
 		combo_ubicacion.setBounds(134, 77, 158, 23);
 		add(combo_ubicacion);
-		combo_ubicacion.addItem("uno");
-		combo_ubicacion.addItem("dos");
-		combo_ubicacion.addItem("tres");
+		
 		
 		
 
