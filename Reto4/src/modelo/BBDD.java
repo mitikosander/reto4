@@ -10,7 +10,7 @@ public class BBDD {
     static String userBBDD="koldo";
     final static String NOMBREBBDD="reto4";
     final static String IPBBDD="127.0.0.1";
-    static String rutaBBDD="jdbc:mysql:/"+IPBBDD+"/"+NOMBREBBDD+"?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+    static String rutaBBDD="jdbc:mysql://"+IPBBDD+":3306/"+NOMBREBBDD+"?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     
     private Connection conexion;
     
@@ -40,7 +40,7 @@ public class BBDD {
 			return null;
 		}
 	
-		
+	
 	}
     
   //Método para desconectar la BBDD
@@ -54,4 +54,6 @@ public class BBDD {
               }
           }
       }
+  	
+  	
 }

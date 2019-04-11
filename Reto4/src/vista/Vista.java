@@ -16,7 +16,6 @@ public class Vista {
 	private Hotel_Seleccionado hotel_seleccionado;
 	private Inicio_Sesion inicio_sesion;
 	private Mostrar_Lista listahoteles;
-	private Pago pago;
 	private Reserva reserva;
 	
 	
@@ -32,7 +31,6 @@ public class Vista {
 		datos_personas = new Datos_Personas();
 		hotel_seleccionado = new Hotel_Seleccionado();
 		inicio_sesion = new Inicio_Sesion();
-		pago = new Pago();
 		reserva = new Reserva();
 	}
 	
@@ -123,13 +121,6 @@ public class Vista {
 		this.inicio_sesion = inicio_sesion;
 	}
 
-	public Pago getPago() {
-		return pago;
-	}
-
-	public void setPago(Pago pago) {
-		this.pago = pago;
-	}
 
 	public Reserva getReserva() {
 		return reserva;
