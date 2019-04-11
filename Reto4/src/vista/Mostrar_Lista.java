@@ -1,14 +1,20 @@
 package vista;
 
 import javax.swing.JPanel;
-import java.awt.BorderLayout;
+
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
-import javax.swing.border.CompoundBorder;
+
 import javax.swing.JLabel;
 import javax.swing.JButton;
+import javax.swing.JScrollPane;
+import javax.swing.table.DefaultTableModel;
 
 public class Mostrar_Lista extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTable table;
 	private JButton btnaceptar_mostrar_lista;
 	private JButton btnCancelar_mostrar_lista;
@@ -21,9 +27,23 @@ public class Mostrar_Lista extends JPanel {
 		setLayout(null);
 		
 		table = new JTable();
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+			},
+			new String[] {
+				"Nombre ", "Numero Camas", "Numero de habitaciones", "Precio"
+			}
+		));
+		table.getColumnModel().getColumn(0).setPreferredWidth(95);
+		table.getColumnModel().getColumn(1).setPreferredWidth(150);
+		table.getColumnModel().getColumn(2).setPreferredWidth(150);
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		table.setBounds(42, 37, 380, 303);
+		table.setBounds(10, 37, 433, 303);
 		add(table);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(42, 37, 380, 303);
+		add(scrollPane);
 		
 		JLabel lblListaDeHoteles = new JLabel("Lista de Hoteles");
 		lblListaDeHoteles.setBounds(176, 11, 85, 14);
@@ -46,5 +66,4 @@ public class Mostrar_Lista extends JPanel {
 	public void setTable(JTable table) {
 		this.table = table;
 	}
-	
 }
