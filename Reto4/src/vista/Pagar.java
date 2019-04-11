@@ -4,7 +4,7 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
-import javax.swing.ImageIcon;
+
 
 public class Pagar extends JPanel {
 	
@@ -15,8 +15,6 @@ public class Pagar extends JPanel {
 	private JTextField tFIntroducidoPagar;
 	private JTextField tFAdevolverPagar;
 	private JButton btn50Pagar, btn20Pagar, btn10Pagar, btn5Pagar, btn2Pagar,btn1Pagar, btn05Pagar,btn02Pagar,btn01Pagar,btn005Pagar,btn002Pagar, btn001Pagar, btnGuardar, btnCancelar,btnFinalizar;                                                      
-	private JLabel label;
-
 	public Pagar() {
 	setLayout(null);
 	setBounds(100, 100, 500, 500);
