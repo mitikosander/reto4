@@ -1,11 +1,8 @@
 package modelo;
  
-	import java.beans.Statement;
-import java.io.BufferedReader;
-import java.io.FileReader;
+
 import java.sql.Connection;
-	import java.sql.DriverManager;
-import java.sql.ResultSet;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 	 
 public class BBDD {
@@ -25,7 +22,6 @@ public class BBDD {
 	public Connection conectarBase() {
 		
 		//Variables para la conexion
-		String usuario=Fitxero.user,password=Fitxero.pass,url=Fitxero.URL;
 
 		
 		//llamamos al Driver
@@ -33,7 +29,7 @@ public class BBDD {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			System.out.println("Driver cargado");
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
+			
 			System.err.println("Driver no encontrado");
 			e.printStackTrace();
 		}
@@ -41,9 +37,9 @@ public class BBDD {
 		//establecemos la conexion pasando los parametros definidos
 		try {
 			 conexion = DriverManager.getConnection(
-					   url,
-					   usuario,
-					   password);
+					   rutaBBDD,
+					   userBBDD,
+					   passBBDD);
 			System.out.println("Conexion completa");
 			return conexion;
 			

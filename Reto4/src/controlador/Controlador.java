@@ -37,7 +37,7 @@ public class Controlador {
 			public void actionPerformed(ActionEvent arg0) {
 				//Tras la busqueda inicial vamos a la pantall de seleccion de hoteles
 				vista.mostrarPantalla(vista.getListahoteles());
-			
+				rellenarTablaHoteles(alojamientos, vista.getListahoteles().getTable());
 			}
 		});
 		
@@ -178,8 +178,8 @@ public class Controlador {
 		});
 	}
 		
-		//rellenarTablaHoteles(alojamientos, vista.getListahoteles().getTable());
-		
+	
+	
 		
 		
 	

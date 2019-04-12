@@ -267,7 +267,7 @@ public class Inicio extends JPanel {
 
 
 	public JComboBox<String> getCombo_ubicacion() {
-		return getCombo_ubicacion();
+		return combo_ubicacion;
 	}
 
 
