@@ -130,9 +130,7 @@ public class Inicio extends JPanel {
 		combo_ubicacion = new JComboBox<String>();
 		combo_ubicacion.setBounds(134, 77, 158, 23);
 		add(combo_ubicacion);
-		
-		
-		
+
 
 	}
 

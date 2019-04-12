@@ -66,4 +66,23 @@ public class Mostrar_Lista extends JPanel {
 	public void setTable(JTable table) {
 		this.table = table;
 	}
+
+	public JButton getBtnaceptar_mostrar_lista() {
+		return btnaceptar_mostrar_lista;
+	}
+
+	public void setBtnaceptar_mostrar_lista(JButton btnaceptar_mostrar_lista) {
+		this.btnaceptar_mostrar_lista = btnaceptar_mostrar_lista;
+	}
+
+	public JButton getBtnCancelar_mostrar_lista() {
+		return btnCancelar_mostrar_lista;
+	}
+
+	public void setBtnCancelar_mostrar_lista(JButton btnCancelar_mostrar_lista) {
+		this.btnCancelar_mostrar_lista = btnCancelar_mostrar_lista;
+	}
+	
+	
+
 }
