@@ -8,6 +8,10 @@ import javax.swing.JButton;
 import javax.swing.JPasswordField;
 
 public class Inicio_Sesion extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField tf_Usuario_Inicio_Sesion;
 	private JPasswordField pf_Contra_Inicio_Sesion;
 	private JButton btnAceptar_Inicio_Sesion;

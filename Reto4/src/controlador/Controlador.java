@@ -3,7 +3,9 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.List;
+
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 import modelo.Modelo;
 import vista.Vista;
@@ -19,11 +21,12 @@ public class Controlador {
 		Controlador.vista = vista;
 		this.modelo = modelo;
 		
-		//Cargamos la pantalla principal
-		vista.mostrarPantalla(vista.getInicio());
+		//Cargamos la pantalla principal y el combo con las ubicaciones
 		
-		//Cargamos el comboBox con las ciudades
+		vista.mostrarPantalla(vista.getInicio());
 		rellenarComboUbicaciones();
+	
+		
 		initalizeEvents();
 		
 	}
@@ -42,7 +45,7 @@ public class Controlador {
 			public void actionPerformed(ActionEvent arg0) {
 				//Tras la busqueda inicial vamos a la pantall de seleccion de hoteles
 				vista.mostrarPantalla(vista.getPagar());
-			
+				
 			}
 		});
 		
@@ -175,7 +178,7 @@ public class Controlador {
 		});
 	}
 		
-		
+		//rellenarTablaHoteles(alojamientos, vista.getListahoteles().getTable());
 		
 		
 		
@@ -199,28 +202,29 @@ public class Controlador {
 	//Metodo para rellenar el combobox con los datos consultados a la BBDD
 	
 	private void rellenarComboUbicaciones() {
-		//Sacar las lineas de la BBDD y rellenar el combobox
-		//1.Sacar datos de la BBDD
-				
-		ArrayList<String> ciudades=modelo.getMetodos().cargarCiudades();
 		
-		//2.Rellenar combo de lineas		
+		//1.Rellenar combo de lineas con los datos de la BBDD	
 
-		for(int i = 0;i<ciudades.size();i++) {
-			vista.getInicio().getCombo_ubicacion().addItem(ciudades.get(i));
-		}
+		ArrayList<String> nombreParadas =modelo.getMetodos().cargarciudades();
+		
+		// Rellenar las paradas
+		for (int i = 0; i <nombreParadas.size(); i++) {
+			vista.getInicio().getCombo_ubicacion().addItem(nombreParadas.get(i));
 
 	}
+}
 	
 	//Metodo para rellenar la tabla con los nombres y precios de los hoteles
-	private void rellenarTablaHoteles(ArrayList<modelo.Alojamiento> alojamientos) {
-		List<String> columnas=new ArrayList<String>();
+	private void rellenarTablaHoteles(ArrayList<modelo.Alojamiento> alojamientos, JTable t1) {
 		
-		columnas.add("Nombre: ");
-		columnas.add("Precio");
+		
+		DefaultTableModel modelotabla = new DefaultTableModel(4,0);
+		t1=new JTable(modelotabla);
+		vista.getListahoteles().getTable().add(t1);
+		
 		
 		for(int i=0;i<alojamientos.size();i++) {
-			
+			 modelotabla.addRow(new Object[] {alojamientos.get(i).getNombre(),alojamientos.get(i).getNum_camas(),alojamientos.get(i).getNum_habitaciones(),alojamientos.get(i).getPrecio()});
 		}
 		
 		

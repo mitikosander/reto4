@@ -9,14 +9,24 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 	 
 public class BBDD {
-	
-	private Connection conexion;
+
+    //Declaramos los datos para la conexion
+    static String passBBDD="koldo";
+    static String userBBDD="koldo";
+    final static String NOMBREBBDD="reto4";
+    final static String IPBBDD="127.0.0.1";
+    static String rutaBBDD="jdbc:mysql://"+IPBBDD+":3306/"+NOMBREBBDD+"?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+    
+    private Connection conexion;
+    
+
 	
 	//Metodo al que llamaremos para inicializar la conexion con la base de datos
 	public Connection conectarBase() {
 		
 		//Variables para la conexion
 		String usuario=Fitxero.user,password=Fitxero.pass,url=Fitxero.URL;
+
 		
 		//llamamos al Driver
 		try {
@@ -43,21 +53,19 @@ public class BBDD {
 			return null;
 		}
 	
-		
+	
 	}
 	
-	
-	//Método para desconectar la BBDD
-	
-	public void desconectar() {
-        if(conexion != null) {
-            try {
-                conexion.close();
-                conexion = null;
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-    }
+
+  	public void desconectar() {
+          if(conexion != null) {
+              try {
+                  conexion.close();
+                  conexion = null;
+              } catch (SQLException e) {
+              }
+          }
+      }
+  	
 }
 	 

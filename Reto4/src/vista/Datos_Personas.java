@@ -7,6 +7,11 @@ import javax.swing.JButton;
 public class Datos_Personas extends JPanel {
 
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
 	 * Create the panel.
 	 */
 	public Datos_Personas() {

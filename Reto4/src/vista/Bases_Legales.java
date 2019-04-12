@@ -5,17 +5,21 @@ import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Dimension;
 
-import javax.swing.JEditorPane;
+
 import javax.swing.JFrame;
-import javax.swing.JScrollBar;
+
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 import javax.swing.JButton;
-import java.awt.BorderLayout;
+
 
 public class Bases_Legales extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private  JRadioButton rdbtnNewRadioButton;
 	private  JButton btnSiguiente_Blegales;
 	
@@ -54,12 +58,7 @@ public class Bases_Legales extends JPanel {
 	        bigPane.add(btnSiguiente_Blegales);
 	        scrollPane.setPreferredSize(new Dimension(390, 390));
 
-	        JFrame frame = new JFrame("TERMINOS LEGALES");
-	        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	        frame.getContentPane().add(scrollPane);
-	        frame.pack();
-	        frame.setLocationRelativeTo(null);
-	        frame.setVisible(true);
+	        
 	}
-	//ñk
+	
 }

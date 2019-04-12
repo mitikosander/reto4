@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 
+
 public class Pagar extends JPanel {
 	private JTextField textField;
 	private JTextField textField_1;
@@ -34,6 +35,9 @@ public class Pagar extends JPanel {
 	/**
 	 * Create the panel.
 	 */
+
+	private static final long serialVersionUID = 1L;
+	
 	public Pagar() {
 setLayout(null);
 		

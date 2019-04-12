@@ -15,32 +15,37 @@ public class Metodos {
 
 	
 	
-	private static ArrayList<modelo.Alojamiento> busquedas;
-	private static ArrayList<String> ciudades;
+	private  ArrayList<modelo.Alojamiento> busquedas;
+	private  ArrayList<String> ciudades;
+	
+	
 
 	
 	//metodo para guardar el nombre de las ciudades en un arraylist con el que cargaremos el combobox
 	
-	public  ArrayList<String> cargarCiudades(){
-		BBDD connection= new BBDD();
-		ArrayList<String> ciudades=new ArrayList<String>();
+
+	public  ArrayList<String> cargarciudades(){
+		ciudades = new ArrayList<String>();
 		String sql="SELECT ubicacion FROM hoteles";
-		 
+		BBDD conectar=new BBDD();
 		try {
-			PreparedStatement ps=connection.conectarBase().prepareStatement(sql);
+			PreparedStatement ps=conectar.conectarBase().prepareStatement(sql);
 			ResultSet rs=ps.executeQuery();
 			
 			while(rs.next()) {
+
+				
+				
+
 				ciudades.add(rs.getString(1));
 				
 			}
-		
-		}catch(Exception e) {
-			System.err.println("Consulta no valida");
-		}
-		
-		
-		return ciudades;
+			return ciudades;
+		}catch(SQLException e) {
+			System.err.println("Consulta erronea, motivo del error: "+e);
+			return ciudades=null;
+			}
+
 	}
 
 	//Metodo para buscar alojamiento segun los valores indicados en la busqueda
