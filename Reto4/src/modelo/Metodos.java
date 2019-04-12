@@ -21,28 +21,26 @@ public class Metodos {
 	
 	//metodo para guardar el nombre de las ciudades en un arraylist con el que cargaremos el combobox
 	
-	public  ArrayList<String> cargarciudades(){
-		ciudades = null;
+	public  ArrayList<String> cargarCiudades(){
+		BBDD connection= new BBDD();
+		ArrayList<String> ciudades=new ArrayList<String>();
 		String sql="SELECT ubicacion FROM hoteles";
-		String flag=null;
-		BBDD conectar=new BBDD();
-		int cont=0;
+		 
 		try {
-			PreparedStatement ps=conectar.conectarBase().prepareStatement(sql);
+			PreparedStatement ps=connection.conectarBase().prepareStatement(sql);
 			ResultSet rs=ps.executeQuery();
 			
 			while(rs.next()) {
-				flag=rs.getString(cont);
-				ciudades.add(flag);
-				cont++;
+				ciudades.add(rs.getString(1));
 				
 			}
-		}catch(SQLException e) {
-			System.err.println("Consulta erronea, motivo del erro: "+e);
+		
+		}catch(Exception e) {
+			System.err.println("Consulta no valida");
 		}
 		
-		return ciudades;
 		
+		return ciudades;
 	}
 
 	//Metodo para buscar alojamiento segun los valores indicados en la busqueda
@@ -92,7 +90,27 @@ public class Metodos {
 		
 	
 	}
+
 	
+	public double cargarPrecioHotelSelecc(String nombrehotel){
+		double precio=0;
+		
+		String sql="SELECT precio FROM hoteles WHERE nombre LIKE '"+nombrehotel+"'";
+		BBDD conectar=new BBDD();
+		
+		try {
+			PreparedStatement ps=conectar.conectarBase().prepareStatement(sql);
+			ResultSet rs=ps.executeQuery();
+			
+			while(rs.next()) {
+				precio=rs.getDouble(0);
+			}
+		}catch(SQLException e) {
+			System.err.println("Conexion fallida, causa del error:" +e);
+		}
+		
+		return precio;
+	}
 	
 	//Metodo para generar un fichero de texto
 	private static void modificarfichero() {
@@ -122,6 +140,8 @@ public class Metodos {
        }
 	
 	}
+	
+	
 	
 	
 	
