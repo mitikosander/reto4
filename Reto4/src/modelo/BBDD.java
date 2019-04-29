@@ -1,21 +1,32 @@
 package modelo;
-
+ 
+	import java.beans.Statement;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.sql.Connection;
-import java.sql.DriverManager;
+	import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-
+	 
 public class BBDD {
+
     //Declaramos los datos para la conexion
-    static String passBBDD="admin";
-    static String userBBDD="admin";
+    static String passBBDD="koldo";
+    static String userBBDD="koldo";
     final static String NOMBREBBDD="reto4";
     final static String IPBBDD="127.0.0.1";
-    static String rutaBBDD="jdbc:mysql:/"+IPBBDD+"/"+NOMBREBBDD+"?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+    static String rutaBBDD="jdbc:mysql://"+IPBBDD+":3306/"+NOMBREBBDD+"?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     
     private Connection conexion;
     
-    //Creamos el metodo para conectar a la base
-    public Connection conectarBase() {
+
+	
+	//Metodo al que llamaremos para inicializar la conexion con la base de datos
+	public Connection conectarBase() {
+		
+		//Variables para la conexion
+		String usuario=Fitxero.user,password=Fitxero.pass,url=Fitxero.URL;
+
 		
 		//llamamos al Driver
 		try {
@@ -24,27 +35,28 @@ public class BBDD {
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			System.err.println("Driver no encontrado");
+			e.printStackTrace();
 		}
 		
 		//establecemos la conexion pasando los parametros definidos
 		try {
 			 conexion = DriverManager.getConnection(
-					   rutaBBDD,
-					   userBBDD,
-					   passBBDD);
+					   url,
+					   usuario,
+					   password);
 			System.out.println("Conexion completa");
 			return conexion;
 			
 		} catch (SQLException e) {
 			System.err.println("Error en la conexion");
+			e.printStackTrace();
 			return null;
 		}
 	
-		
-	}
-    
-  //Método para desconectar la BBDD
 	
+	}
+	
+
   	public void desconectar() {
           if(conexion != null) {
               try {
@@ -54,4 +66,6 @@ public class BBDD {
               }
           }
       }
+  	
 }
+	 

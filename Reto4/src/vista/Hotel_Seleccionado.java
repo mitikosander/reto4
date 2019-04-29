@@ -1,7 +1,7 @@
 package vista;
 
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -9,6 +9,10 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 public class Hotel_Seleccionado extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField tF_nombre_Hotel;
 	private JTextField tf_mc_Hotel;
 	private JTextField tf_ncamas_Hotel;

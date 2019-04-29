@@ -5,17 +5,24 @@ import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Dimension;
 
-import javax.swing.JEditorPane;
+
 import javax.swing.JFrame;
-import javax.swing.JScrollBar;
+
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 import javax.swing.JButton;
-import java.awt.BorderLayout;
+
 
 public class Bases_Legales extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private  JRadioButton rdbtnNewRadioButton;
+	private  JButton btnSiguiente_Blegales;
+	
 
 	/**
 	 * Create the panel.
@@ -39,23 +46,19 @@ public class Bases_Legales extends JPanel {
 	        bigPane.add(txtpnMeCagoEn);
 	        
 	        JLabel lblterminos = new JLabel("Aceptas los t\u00E9rminos legales");
-	        lblterminos.setBounds(0, 329, 390, 14);
+	        lblterminos.setBounds(0, 329, 174, 14);
 	        bigPane.add(lblterminos);
 	        
-	        JRadioButton rdbtnNewRadioButton = new JRadioButton("New radio button");
-	        rdbtnNewRadioButton.setBounds(142, 325, 18, 23);
+	        rdbtnNewRadioButton = new JRadioButton("New radio button");
+	        rdbtnNewRadioButton.setBounds(180, 330, 18, 23);
 	        bigPane.add(rdbtnNewRadioButton);
 	        
-	        JButton btnSiguiente_Blegales = new JButton("Siguiente");
+	        btnSiguiente_Blegales = new JButton("Siguiente");
 	        btnSiguiente_Blegales.setBounds(275, 336, 89, 23);
 	        bigPane.add(btnSiguiente_Blegales);
 	        scrollPane.setPreferredSize(new Dimension(390, 390));
 
-	        JFrame frame = new JFrame("TERMINOS LEGALES");
-	        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	        frame.getContentPane().add(scrollPane);
-	        frame.pack();
-	        frame.setLocationRelativeTo(null);
-	        frame.setVisible(true);
+	        
 	}
+	
 }

@@ -10,8 +10,14 @@ public class Vista {
 	private Inicio inicio;
 	private Pagar pagar;
 	private Vueltas vueltas;
+	private Bases_Legales bases_legales;
+	private Casa_Apart_Seleccionado casa_apart_seleccionado;
+	private Datos_Personas datos_personas;
+	private Hotel_Seleccionado hotel_seleccionado;
+	private Inicio_Sesion inicio_sesion;
+	private Mostrar_Lista listahoteles;
+	private Reserva reserva;
 	
-
 	
 	public Vista() {
 		//Aqui completamos la instancia del objeto para poder acceder a sus atributos
@@ -19,6 +25,13 @@ public class Vista {
 		inicio=new Inicio();
 		pagar=new Pagar();
 		vueltas=new Vueltas();
+		listahoteles=new Mostrar_Lista();
+		bases_legales=new Bases_Legales();
+		casa_apart_seleccionado=new Casa_Apart_Seleccionado();
+		datos_personas = new Datos_Personas();
+		hotel_seleccionado = new Hotel_Seleccionado();
+		inicio_sesion = new Inicio_Sesion();
+		reserva = new Reserva();
 	}
 	
 	public  void mostrarPantalla(JPanel panel) {
@@ -59,5 +72,62 @@ public class Vista {
 		this.vueltas = vueltas;
 	}
 
+	public Mostrar_Lista getListahoteles() {
+		return listahoteles;
+	}
+
+	public void setListahoteles(Mostrar_Lista listahoteles) {
+		this.listahoteles = listahoteles;
+	}
+
 	
+	public Bases_Legales getBases_legales() {
+		return bases_legales;
+	}
+
+	public void setBases_legales(Bases_Legales bases_legales) {
+		this.bases_legales = bases_legales;
+	}
+
+	public Casa_Apart_Seleccionado getCasa_apart_seleccionado() {
+		return casa_apart_seleccionado;
+	}
+
+	public void setCasa_apart_seleccionado(Casa_Apart_Seleccionado casa_apart_seleccionado) {
+		this.casa_apart_seleccionado = casa_apart_seleccionado;
+	}
+
+	public Datos_Personas getDatos_personas() {
+		return datos_personas;
+	}
+
+	public void setDatos_personas(Datos_Personas datos_personas) {
+		this.datos_personas = datos_personas;
+	}
+
+	public Hotel_Seleccionado getHotel_seleccionado() {
+		return hotel_seleccionado;
+	}
+
+	public void setHotel_seleccionado(Hotel_Seleccionado hotel_seleccionado) {
+		this.hotel_seleccionado = hotel_seleccionado;
+	}
+
+	public Inicio_Sesion getInicio_sesion() {
+		return inicio_sesion;
+	}
+
+	public void setInicio_sesion(Inicio_Sesion inicio_sesion) {
+		this.inicio_sesion = inicio_sesion;
+	}
+
+
+	public Reserva getReserva() {
+		return reserva;
+	}
+
+	public void setReserva(Reserva reserva) {
+		this.reserva = reserva;
+	}
+
 }
