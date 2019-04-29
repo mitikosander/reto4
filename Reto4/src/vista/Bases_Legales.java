@@ -57,7 +57,7 @@ public class Bases_Legales extends JPanel {
 	        btnSiguiente_Blegales.setBounds(275, 336, 89, 23);
 	        bigPane.add(btnSiguiente_Blegales);
 	        scrollPane.setPreferredSize(new Dimension(390, 390));
-//k
+
 	        
 	}
 	
