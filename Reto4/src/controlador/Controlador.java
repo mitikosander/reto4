@@ -3,6 +3,9 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -37,6 +40,8 @@ public class Controlador {
 			public void actionPerformed(ActionEvent arg0) {
 				//Tras la busqueda inicial vamos a la pantall de seleccion de hoteles
 				vista.mostrarPantalla(vista.getListahoteles());
+				
+				//Usamos el metodo que cargara los hoteles de la ubicacion seleccionada
 				rellenarTablaHoteles(alojamientos, vista.getListahoteles().getTable());
 			}
 		});
@@ -46,6 +51,7 @@ public class Controlador {
 				//Tras la busqueda inicial vamos a la pantall de seleccion de hoteles
 				vista.mostrarPantalla(vista.getPagar());
 				
+				
 			}
 		});
 		
@@ -53,9 +59,19 @@ public class Controlador {
 			public void actionPerformed(ActionEvent arg0) {
 				//Tras la busqueda inicial vamos a la pantall de seleccion de hoteles
 				vista.mostrarPantalla(vista.getInicio());
+				
+				//método para coger el precio del hotel seleccionado desde la base de datos
 			
 			}
+				
 		});
+		
+		vista.getPagar().getbtnCancelar().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				vista.mostrarPantalla(vista.getInicio());
+			}
+		});
+		
 		vista.getPagar().getbtn50euro().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				// Introducimos 50 eurazos
@@ -207,10 +223,18 @@ public class Controlador {
 
 		ArrayList<String> nombreParadas =modelo.getMetodos().cargarciudades();
 		
+		//Eliminar las paradas repetidas pasando a un Set que no admite repetidos
+		
+		Set<String> hs=new HashSet<>();
+		hs.addAll(nombreParadas);
+		nombreParadas.clear();
+		nombreParadas.addAll(hs);
+		
 		// Rellenar las paradas
 		for (int i = 0; i <nombreParadas.size(); i++) {
+			if(nombreParadas.get(i) !=null) {
 			vista.getInicio().getCombo_ubicacion().addItem(nombreParadas.get(i));
-
+			}
 	}
 }
 	
@@ -218,7 +242,7 @@ public class Controlador {
 	private void rellenarTablaHoteles(ArrayList<modelo.Alojamiento> alojamientos, JTable t1) {
 		
 		
-		DefaultTableModel modelotabla = new DefaultTableModel(4,0);
+		DefaultTableModel modelotabla = new DefaultTableModel(4,1);
 		t1=new JTable(modelotabla);
 		vista.getListahoteles().getTable().add(t1);
 		

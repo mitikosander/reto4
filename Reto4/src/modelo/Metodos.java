@@ -28,18 +28,19 @@ public class Metodos {
 		ciudades = new ArrayList<String>();
 		String sql="SELECT ubicacion FROM hoteles";
 		BBDD conectar=new BBDD();
+		
+		
 		try {
 			PreparedStatement ps=conectar.conectarBase().prepareStatement(sql);
 			ResultSet rs=ps.executeQuery();
 			
 			while(rs.next()) {
 
-				
-				
-
 				ciudades.add(rs.getString(1));
 				
+				
 			}
+			
 			return ciudades;
 		}catch(SQLException e) {
 			System.err.println("Consulta erronea, motivo del error: "+e);
@@ -51,7 +52,7 @@ public class Metodos {
 	//Metodo para buscar alojamiento segun los valores indicados en la busqueda
 	public  ArrayList<modelo.Alojamiento> buscarAlojamientos(){
 	Vista vista=new Vista();
-	String sql="SELECT * FROM hoteles WHERE ubicacion LIKE '"+vista.getInicio().getCombo_ubicacion()+"'";
+	String sql="SELECT * FROM hoteles WHERE ubicacion LIKE '"+vista.getInicio().getCombo_ubicacion().getSelectedItem()+"'";
 	BBDD conectar=new BBDD();
 	busquedas=null;
 	Alojamiento a1=new Alojamiento();
@@ -144,10 +145,6 @@ public class Metodos {
           }
        }
 	
-	}
-	
-	
-	
-	
+	}	
 	
 }
