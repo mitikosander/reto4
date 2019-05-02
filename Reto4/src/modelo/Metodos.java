@@ -28,7 +28,7 @@ public class Metodos {
 		ciudades = new ArrayList<String>();
 		String sql="SELECT ubicacion FROM hoteles";
 		BBDD conectar=new BBDD();
-	
+		
 		
 		try {
 			PreparedStatement ps=conectar.conectarBase().prepareStatement(sql);
@@ -37,16 +37,8 @@ public class Metodos {
 			while(rs.next()) {
 
 				ciudades.add(rs.getString(1));
-	
 				
-			}
-			
-			for(int i=0;i<ciudades.size();i++) {
-				for(int c=0;i<(ciudades.size()-1);c++) {
-					if(ciudades.get(c).equals(ciudades.get(i))) {
-						ciudades.remove(c);
-					}
-				}
+				
 			}
 			
 			return ciudades;

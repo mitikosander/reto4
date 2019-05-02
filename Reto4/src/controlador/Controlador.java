@@ -3,6 +3,9 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -220,10 +223,18 @@ public class Controlador {
 
 		ArrayList<String> nombreParadas =modelo.getMetodos().cargarciudades();
 		
+		//Eliminar las paradas repetidas pasando a un Set que no admite repetidos
+		
+		Set<String> hs=new HashSet<>();
+		hs.addAll(nombreParadas);
+		nombreParadas.clear();
+		nombreParadas.addAll(hs);
+		
 		// Rellenar las paradas
 		for (int i = 0; i <nombreParadas.size(); i++) {
+			if(nombreParadas.get(i) !=null) {
 			vista.getInicio().getCombo_ubicacion().addItem(nombreParadas.get(i));
-
+			}
 	}
 }
 	
