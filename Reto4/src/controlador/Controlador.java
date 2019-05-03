@@ -4,19 +4,19 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Iterator;
+
 import java.util.Set;
 
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
+
 
 import modelo.Modelo;
 import vista.Vista;
 
 public class Controlador {
+	
 	private static Vista vista;
 	private Modelo modelo;
-	private ArrayList<modelo.Alojamiento> alojamientos;
+
 	public double TotalaPagar =0;
 	public double Adevolver =0;
 	public double Introducido= 0;
@@ -42,7 +42,7 @@ public class Controlador {
 				vista.mostrarPantalla(vista.getListahoteles());
 				
 				//Usamos el metodo que cargara los hoteles de la ubicacion seleccionada
-				rellenarTablaHoteles(alojamientos, vista.getListahoteles().getTable());
+				
 			}
 		});
 		
@@ -238,20 +238,6 @@ public class Controlador {
 	}
 }
 	
-	//Metodo para rellenar la tabla con los nombres y precios de los hoteles
-	private void rellenarTablaHoteles(ArrayList<modelo.Alojamiento> alojamientos, JTable t1) {
-		
-		
-		DefaultTableModel modelotabla = new DefaultTableModel(4,1);
-		t1=new JTable(modelotabla);
-		vista.getListahoteles().getTable().add(t1);
-		
-		
-		for(int i=0;i<alojamientos.size();i++) {
-			 modelotabla.addRow(new Object[] {alojamientos.get(i).getNombre(),alojamientos.get(i).getNum_camas(),alojamientos.get(i).getNum_habitaciones(),alojamientos.get(i).getPrecio()});
-		}
-		
-		
-	}
+
 
 }
