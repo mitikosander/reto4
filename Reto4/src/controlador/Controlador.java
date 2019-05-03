@@ -7,7 +7,7 @@ import java.util.HashSet;
 
 import java.util.Set;
 
-
+import javax.swing.table.DefaultTableModel;
 
 import modelo.Modelo;
 import vista.Vista;
@@ -42,7 +42,9 @@ public class Controlador {
 				vista.mostrarPantalla(vista.getListahoteles());
 				
 				//Usamos el metodo que cargara los hoteles de la ubicacion seleccionada
+				DefaultTableModel modelos=modelo.getMetodos().cargarTablaAlojamientos((String) vista.getInicio().getCombo_ubicacion().getSelectedItem());
 				
+				vista.getListahoteles().getTable().setModel(modelos);
 			}
 		});
 		

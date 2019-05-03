@@ -7,6 +7,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
 import vista.Vista;
 
 public class Metodos {
@@ -50,50 +53,51 @@ public class Metodos {
 	}
 
 	//Metodo para buscar alojamiento segun los valores indicados en la busqueda
-	public  ArrayList<modelo.Alojamiento> buscarAlojamientos(){
+	public  DefaultTableModel  cargarTablaAlojamientos(String ubicacion){
+	
 	Vista vista=new Vista();
-	String sql="SELECT * FROM hoteles WHERE ubicacion LIKE '"+vista.getInicio().getCombo_ubicacion().getSelectedItem()+"'";
+	
+	String sql="SELECT nombre,precio,tipo_cama,n_camas,n_habitaciones FROM hoteles WHERE ubicacion LIKE '"+ubicacion+"'";
 	BBDD conectar=new BBDD();
 	busquedas=null;
-	Alojamiento a1=new Alojamiento();
+	
+	
+	DefaultTableModel modelo = new DefaultTableModel();
+	
+	
+	modelo.addColumn("Nombre: ");
+	modelo.addColumn("Precio: ");
+	modelo.addColumn("Tipo Cama: ");
+	modelo.addColumn("Nº Camas: ");
+	modelo.addColumn("Nº Habitaciones: ");
+	
 	try {
-		if(vista.getInicio().getCombo_ubicacion().getSelectedItem()!=null) {
+		
 		PreparedStatement ps=conectar.conectarBase().prepareStatement(sql);
 		ResultSet rs=ps.executeQuery();
 		while(rs.next()) {
 			
+			//Creamos un array para carda fila de la tabla
+			Object [] fila = new Object[5]; // Hay 5 columnas en la tabla asi que asignamos 5 posiciones
 			
-			a1.setNum_habitaciones(rs.getInt(1));
-			a1.setNum_camas(rs.getInt(2));
-			a1.setTipo_cama(rs.getString(3));
-			a1.setPension(rs.getString(4));
-			a1.setUbicacion(rs.getString(5));
-			a1.setNombre(rs.getString(6));
-			a1.setWifi(rs.getBoolean(7));
-			a1.setPiscina(rs.getBoolean(8));
-			a1.setSpa(rs.getBoolean(9));
-			a1.setParking(rs.getBoolean(10));
-			a1.setAire(rs.getBoolean(11));
-			a1.setRestaurante(rs.getBoolean(12));
-			a1.setBar(rs.getBoolean(13));
-			a1.setGimnasio(rs.getBoolean(14));
-			a1.setPrecio(rs.getDouble(16));
-			busquedas.add(a1);
+			//insertamos los datos en su posicion del array
+			for(int i=0;i<fila.length;i++) {
+				fila[i]=rs.getObject(i+1);
+			}
+			
+			//anyadimos la fila a la tabla
+			modelo.addRow(fila);
+			
+			
 			
 		}
-		System.out.println("Lista cargada");
-		}else {
-			System.err.println("Error al cargar la lista, Ubicacion nula");
-		}
-	
 	}catch(SQLException e) {
 		System.err.println("Conexion fallida, causa del error: "+ e);
 	}
 	
-	return busquedas;
+	//pasamos la tabla poblada lista para usar
+	return modelo;
 	
-		
-		
 	
 	}
 
