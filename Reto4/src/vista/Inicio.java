@@ -3,13 +3,19 @@ package vista;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+
+import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.GridLayout;
+
 import javax.swing.JLabel;
 import javax.swing.ButtonGroup;
 import javax.swing.JRadioButton;
 import javax.swing.JComboBox;
 import javax.swing.JSpinner;
 import com.toedter.calendar.JCalendar;
+import java.awt.Dimension;
+
 
 
 public class Inicio extends JPanel {
@@ -32,18 +38,21 @@ public class Inicio extends JPanel {
 	private JSpinner spinner_adultos;
 	private JSpinner spinner_habita;
 	private JComboBox<String> combo_ubicacion;
-
+    private Dimension dim;
 
 	/**
 	 * Create the panel.
 	 */
 	public Inicio() {
 		setLayout(null);
+		  dim=super.getToolkit().getScreenSize();
+	        super.setSize(dim);
+	        super.setVisible(true);
 		
-		
+	        
 		btn_buscar_inicio = new JButton("Buscar");
 		btn_buscar_inicio.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		btn_buscar_inicio.setBounds(405, 392, 78, 23);
+		btn_buscar_inicio.setBounds(213, 349, 78, 23);
 		add(btn_buscar_inicio);
 		
 
@@ -66,19 +75,19 @@ public class Inicio extends JPanel {
 		grupo1.add(btnCasa);
 		
 		JLabel lblPrecioMinimo = new JLabel("Precio minimo:");
-		lblPrecioMinimo.setBounds(187, 145, 68, 14);
+		lblPrecioMinimo.setBounds(139, 111, 85, 14);
 		add(lblPrecioMinimo);
 	
 		JLabel lblPrecioMaximo = new JLabel("Precio Maximo:");
-		lblPrecioMaximo.setBounds(94, 145, 83, 14);
+		lblPrecioMaximo.setBounds(24, 111, 98, 14);
 		add(lblPrecioMaximo);
 		
 		 spinner_minimo = new JSpinner();
-		spinner_minimo.setBounds(187, 180, 39, 20);
+		spinner_minimo.setBounds(185, 135, 39, 20);
 		add(spinner_minimo);
 		
 		spinner_maximo = new JSpinner();
-		spinner_maximo.setBounds(94, 180, 39, 20);
+		spinner_maximo.setBounds(68, 135, 39, 20);
 		add(spinner_maximo);
 		
 		txtAquiVaEl = new JTextField();
@@ -88,43 +97,43 @@ public class Inicio extends JPanel {
 		txtAquiVaEl.setColumns(10);
 		
 		JLabel lblFechaDeEntrada = new JLabel("Fecha de entrada");
-		lblFechaDeEntrada.setBounds(26, 211, 101, 14);
+		lblFechaDeEntrada.setBounds(24, 166, 101, 14);
 		add(lblFechaDeEntrada);
 		
 		JLabel lblFechaDeSalida = new JLabel("Fecha de salida");
-		lblFechaDeSalida.setBounds(299, 211, 96, 14);
+		lblFechaDeSalida.setBounds(297, 166, 96, 14);
 		add(lblFechaDeSalida);
 		
 		calendar_entrada = new JCalendar();
-		calendar_entrada.setBounds(26, 230, 184, 153);
+		calendar_entrada.setBounds(24, 185, 184, 153);
 		add(calendar_entrada);
 		
 		calendar_salida = new JCalendar();
-		calendar_salida.setBounds(299, 230, 184, 153);
+		calendar_salida.setBounds(297, 185, 184, 153);
 		add(calendar_salida);
 		
 		JLabel lblNios = new JLabel("Ni\u00F1os:");
-		lblNios.setBounds(264, 145, 46, 14);
+		lblNios.setBounds(245, 111, 56, 14);
 		add(lblNios);
 		
 		spinner_ninios = new JSpinner();
-		spinner_ninios.setBounds(264, 180, 29, 20);
+		spinner_ninios.setBounds(262, 135, 29, 20);
 		add(spinner_ninios);
 		
 		JLabel lblAdultos = new JLabel("Adultos:");
-		lblAdultos.setBounds(320, 145, 46, 14);
+		lblAdultos.setBounds(301, 111, 48, 14);
 		add(lblAdultos);
 		
 		spinner_adultos = new JSpinner();
-		spinner_adultos.setBounds(320, 180, 29, 20);
+		spinner_adultos.setBounds(318, 135, 29, 20);
 		add(spinner_adultos);
 		
 		JLabel lblHabitaciones = new JLabel("Habitaciones: ");
-		lblHabitaciones.setBounds(400, 145, 68, 14);
+		lblHabitaciones.setBounds(359, 111, 90, 14);
 		add(lblHabitaciones);
 		
 		spinner_habita = new JSpinner();
-		spinner_habita.setBounds(400, 180, 29, 20);
+		spinner_habita.setBounds(398, 135, 29, 20);
 		add(spinner_habita);
 		
 		combo_ubicacion = new JComboBox<String>();
@@ -276,5 +285,4 @@ public class Inicio extends JPanel {
 	}
 	
 	
-
 }

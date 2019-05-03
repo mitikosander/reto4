@@ -46,15 +46,15 @@ public class Bases_Legales extends JPanel {
 	        bigPane.add(txtpnMeCagoEn);
 	        
 	        JLabel lblterminos = new JLabel("Aceptas los t\u00E9rminos legales");
-	        lblterminos.setBounds(0, 329, 174, 14);
+	        lblterminos.setBounds(0, 338, 174, 14);
 	        bigPane.add(lblterminos);
 	        
 	        rdbtnNewRadioButton = new JRadioButton("New radio button");
-	        rdbtnNewRadioButton.setBounds(180, 330, 18, 23);
+	        rdbtnNewRadioButton.setBounds(177, 334, 18, 23);
 	        bigPane.add(rdbtnNewRadioButton);
 	        
 	        btnSiguiente_Blegales = new JButton("Siguiente");
-	        btnSiguiente_Blegales.setBounds(275, 336, 89, 23);
+	        btnSiguiente_Blegales.setBounds(270, 334, 89, 23);
 	        bigPane.add(btnSiguiente_Blegales);
 	        scrollPane.setPreferredSize(new Dimension(390, 390));
 
