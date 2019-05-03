@@ -46,7 +46,7 @@ public class Mostrar_Lista extends JPanel {
 		add(scrollPane);
 		
 		JLabel lblListaDeHoteles = new JLabel("Lista de Hoteles");
-		lblListaDeHoteles.setBounds(176, 11, 85, 14);
+		lblListaDeHoteles.setBounds(176, 11, 121, 14);
 		add(lblListaDeHoteles);
 		
 		 btnaceptar_mostrar_lista = new JButton("Aceptar");
