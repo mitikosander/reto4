@@ -24,6 +24,15 @@ public class Metodos {
 	
 
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	//metodo para guardar el nombre de las ciudades en un arraylist con el que cargaremos el combobox
 	
 
@@ -53,7 +62,7 @@ public class Metodos {
 	}
 
 	//Metodo para buscar alojamiento segun los valores indicados en la busqueda
-	public  DefaultTableModel  cargarTablaAlojamientos(String ubicacion){
+	public  TableModel  cargarTablaAlojamientos(String ubicacion){
 	
 	Vista vista=new Vista();
 	
@@ -62,7 +71,7 @@ public class Metodos {
 	busquedas=null;
 	
 	
-	DefaultTableModel modelo = new DefaultTableModel();
+	TableModel modelo = new TableModel();
 	
 	
 	modelo.addColumn("Nombre: ");
@@ -101,7 +110,7 @@ public class Metodos {
 	
 	}
 
-	
+	//Metodo para recibir de la BBDD el precio de nuestra selección 
 	public double cargarPrecioHotelSelecc(String nombrehotel){
 		double precio=0;
 		

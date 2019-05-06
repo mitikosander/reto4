@@ -10,6 +10,7 @@ import java.util.Set;
 import javax.swing.table.DefaultTableModel;
 
 import modelo.Modelo;
+import modelo.TableModel;
 import vista.Vista;
 
 public class Controlador {
@@ -41,8 +42,9 @@ public class Controlador {
 				//Tras la busqueda inicial vamos a la pantall de seleccion de hoteles
 				vista.mostrarPantalla(vista.getListahoteles());
 				
-				//Usamos el metodo que cargara los hoteles de la ubicacion seleccionada
-				DefaultTableModel modelos=modelo.getMetodos().cargarTablaAlojamientos((String) vista.getInicio().getCombo_ubicacion().getSelectedItem());
+				/*Guardamos el modelo de la tabla y despues 
+				Usamos el metodo que cargara los hoteles de la ubicacion seleccionada*/
+				TableModel modelos=modelo.getMetodos().cargarTablaAlojamientos((String) vista.getInicio().getCombo_ubicacion().getSelectedItem());
 				
 				vista.getListahoteles().getTable().setModel(modelos);
 			}
@@ -62,8 +64,15 @@ public class Controlador {
 				//Tras la busqueda inicial vamos a la pantall de seleccion de hoteles
 				vista.mostrarPantalla(vista.getInicio());
 				
-				//método para coger el precio del hotel seleccionado desde la base de datos
-			
+				//guardamos los datos de nuestra seleccion y llamamos al metodo para coger el precio del hotel seleccionado desde la base de datos
+				int selectedRow=vista.getListahoteles().getTable().getSelectedRow();
+				int selectedColumn=vista.getListahoteles().getTable().getSelectedColumn();
+				String text=(String) vista.getListahoteles().getTable().getValueAt(selectedRow, selectedColumn);
+				double precioPedido=modelo.getMetodos().cargarPrecioHotelSelecc(text);
+				
+				//asignamos a la pantalla del pagos el valor del precio
+				vista.getPagar().gettxtAPagar().setText(Double.toString(precioPedido));
+				
 			}
 				
 		});
@@ -206,13 +215,13 @@ public class Controlador {
 		double cambios=0;
 		double Total=0;
 		TotalIntroducido = TotalIntroducido + cantidad;
-		vista.getPagar().gettextField_1().setText(Double.toString(TotalIntroducido));
+		vista.getPagar().gettxtIntroducido().setText(Double.toString(TotalIntroducido));
 		// Datos.sacarResto=Datos.Total-Datos.TotalIntroducido;
 		if (Total > TotalIntroducido) {
-			vista.getPagar().gettextField_2().setText(Double.toString(0));
+			vista.getPagar().gettxtIntroducido().setText(Double.toString(0));
 
 		} else {
-			vista.getPagar().gettextField_2().setText(Double.toString(TotalIntroducido - Total));
+			vista.getPagar().gettxtIntroducido().setText(Double.toString(TotalIntroducido - Total));
 			cambios = TotalIntroducido - Total;
 		}
 	}

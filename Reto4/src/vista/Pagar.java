@@ -5,14 +5,13 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 
 
 public class Pagar extends JPanel {
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private JTextField txtAPagar;
+	private JTextField txtIntroducido;
+	private JTextField txtDevolver;
 	private JLabel lblTotalAPagar;
 	private JLabel lblPagado;
 	private JLabel lblADevolver;
@@ -24,7 +23,6 @@ public class Pagar extends JPanel {
 	private JButton btn1euro;
 	private JButton btnDevolver;
 	private JButton btnCancelar;
-	private JButton btncnt;
 	private JButton btn50cnt;
 	private JButton btn20cnt;
 	private JButton btn10cnt;
@@ -45,28 +43,28 @@ setLayout(null);
 		lblTotalAPagar.setBounds(103, 42, 95, 16);
 		add(lblTotalAPagar);
 		
-		textField = new JTextField();
-		textField.setBounds(240, 39, 116, 22);
-		add(textField);
-		textField.setColumns(10);
+		txtAPagar = new JTextField();
+		txtAPagar.setBounds(240, 39, 116, 22);
+		add(txtAPagar);
+		txtAPagar.setColumns(10);
 		
 		lblPagado = new JLabel("Total Introducido :");
 		lblPagado.setBounds(103, 69, 116, 16);
 		add(lblPagado);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(240, 68, 116, 22);
-		add(textField_1);
-		textField_1.setColumns(10);
+		txtIntroducido = new JTextField();
+		txtIntroducido.setBounds(240, 68, 116, 22);
+		add(txtIntroducido);
+		txtIntroducido.setColumns(10);
 		
 		lblADevolver = new JLabel("A devolver :");
 		lblADevolver.setBounds(103, 101, 95, 16);
 		add(lblADevolver);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(240, 98, 116, 22);
-		add(textField_2);
-		textField_2.setColumns(10);
+		txtDevolver = new JTextField();
+		txtDevolver.setBounds(240, 98, 116, 22);
+		add(txtDevolver);
+		txtDevolver.setColumns(10);
 		
 		btn50euro = new JButton("50\u20AC");
 		btn50euro.addActionListener(new ActionListener() {
@@ -160,28 +158,28 @@ setLayout(null);
 		btn1cnt.setBounds(380, 164, 60, 25);
 		add(btn1cnt);
 	}
-	public JTextField gettextField() {
-		return (this.textField);
+	public JTextField gettxtAPagar() {
+		return (this.txtAPagar);
 	}
 
-	public void settextField() {
-		this.textField.setText("");
+	public void settxtAPagar() {
+		this.txtAPagar.setText("");
 	}
 
-	public JTextField gettextField_1() {
-		return (this.textField_1);
+	public JTextField gettxtIntroducido() {
+		return (this.txtIntroducido);
 	}
 
-	public void settextField_1() {
-		this.textField_1.setText("");
+	public void settxtIntroducido() {
+		this.txtIntroducido.setText("");
 	}
 
-	public JTextField gettextField_2() {
-		return (this.textField_2);
+	public JTextField txtDevolver() {
+		return (this.txtDevolver);
 	}
 
-	public void settextField_2() {
-		this.textField_2.setText("");
+	public void settxtDevolver() {
+		this.txtDevolver.setText("");
 	}
 
 	public JLabel getlblTotalAPagar() {
