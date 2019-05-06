@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 
 import vista.Vista;
 
@@ -146,5 +147,17 @@ public class Metodos {
        }
 	
 	}	
+	
+	private static boolean verificarFecha() {
+	    Date entrada = vista.Inicio.calendar_entrada.getDate();
+        Date salida = vista.Inicio.calendar_salida.getDate();
+        
+        if() {
+        	
+        }else {
+        	
+        }
+        
+	}
 	
 }
