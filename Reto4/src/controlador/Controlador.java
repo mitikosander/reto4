@@ -52,12 +52,16 @@ public class Controlador {
 		
 		vista.getListahoteles().getBtnaceptar_mostrar_lista().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				//Tras la busqueda inicial vamos a la pantall de seleccion de hoteles
-				vista.mostrarPantalla(vista.getPagar());
+				//Tras la busqueda inicial vamos a la pantalla de seleccion de hoteles
+				vista.mostrarPantalla(vista.getHotel_seleccionado());
 				
 				
 			}
 		});
+		
+		
+		
+		
 		
 		vista.getListahoteles().getBtnCancelar_mostrar_lista().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
