@@ -5,7 +5,6 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
@@ -13,9 +12,9 @@ import java.awt.Insets;
 
 
 public class Pagar extends JPanel {
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private JTextField txtAPagar;
+	private JTextField txtIntroducido;
+	private JTextField txtDevolver;
 	private JLabel lblTotalAPagar;
 	private JLabel lblPagado;
 	private JLabel lblADevolver;
@@ -27,7 +26,6 @@ public class Pagar extends JPanel {
 	private JButton btn1euro;
 	private JButton btnAceptar;
 	private JButton btnCancelar;
-	private JButton btncnt;
 	private JButton btn50cnt;
 	private JButton btn20cnt;
 	private JButton btn10cnt;
@@ -64,6 +62,7 @@ public class Pagar extends JPanel {
 		gbc_lblTotalAPagar.gridy = 1;
 		add(lblTotalAPagar, gbc_lblTotalAPagar);
 		
+
 		textField = new JTextField();
 		GridBagConstraints gbc_textField = new GridBagConstraints();
 		gbc_textField.fill = GridBagConstraints.BOTH;
@@ -84,6 +83,7 @@ public class Pagar extends JPanel {
 		gbc_lblPagado.gridy = 2;
 		add(lblPagado, gbc_lblPagado);
 		
+
 		textField_1 = new JTextField();
 		GridBagConstraints gbc_textField_1 = new GridBagConstraints();
 		gbc_textField_1.fill = GridBagConstraints.BOTH;
@@ -93,6 +93,7 @@ public class Pagar extends JPanel {
 		gbc_textField_1.gridy = 2;
 		add(textField_1, gbc_textField_1);
 		textField_1.setColumns(10);
+
 		
 		lblADevolver = new JLabel("A devolver :");
 		GridBagConstraints gbc_lblADevolver = new GridBagConstraints();
@@ -103,6 +104,7 @@ public class Pagar extends JPanel {
 		gbc_lblADevolver.gridy = 3;
 		add(lblADevolver, gbc_lblADevolver);
 		
+
 		btn10euro = new JButton("10 \u20AC");
 		btn10euro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -256,28 +258,28 @@ public class Pagar extends JPanel {
 		gbc_btnAceptar.gridy = 7;
 		add(btnAceptar, gbc_btnAceptar);
 	}
-	public JTextField gettextField() {
-		return (this.textField);
+	public JTextField gettxtAPagar() {
+		return (this.txtAPagar);
 	}
 
-	public void settextField() {
-		this.textField.setText("");
+	public void settxtAPagar() {
+		this.txtAPagar.setText("");
 	}
 
-	public JTextField gettextField_1() {
-		return (this.textField_1);
+	public JTextField gettxtIntroducido() {
+		return (this.txtIntroducido);
 	}
 
-	public void settextField_1() {
-		this.textField_1.setText("");
+	public void settxtIntroducido() {
+		this.txtIntroducido.setText("");
 	}
 
-	public JTextField gettextField_2() {
-		return (this.textField_2);
+	public JTextField txtDevolver() {
+		return (this.txtDevolver);
 	}
 
-	public void settextField_2() {
-		this.textField_2.setText("");
+	public void settxtDevolver() {
+		this.txtDevolver.setText("");
 	}
 
 	public JLabel getlblTotalAPagar() {
@@ -309,7 +311,7 @@ public class Pagar extends JPanel {
 	}
 
 	public void setbtn50euro() {
-		this.btn50euro.setText("50€");
+		this.btn50euro.setText("50Â€");
 	}
 
 	public JButton getbtn20euro() {
@@ -317,7 +319,7 @@ public class Pagar extends JPanel {
 	}
 
 	public void setbtn20euro() {
-		this.btn20euro.setText("20€");
+		this.btn20euro.setText("20Â€");
 	}
 
 	public JButton getbtn10euro() {
@@ -325,7 +327,7 @@ public class Pagar extends JPanel {
 	}
 
 	public void setbtn10euro() {
-		this.btn10euro.setText("10€");
+		this.btn10euro.setText("10Â€");
 	}
 
 	public JButton getbtn5euro() {
@@ -333,7 +335,7 @@ public class Pagar extends JPanel {
 	}
 
 	public void setbtn5euro() {
-		this.btn5euro.setText("5€");
+		this.btn5euro.setText("5Â€");
 	}
 
 	public JButton getbtn2euro() {
@@ -341,7 +343,7 @@ public class Pagar extends JPanel {
 	}
 
 	public void setbtn2euro() {
-		this.btn2euro.setText("2€");
+		this.btn2euro.setText("2Â€");
 	}
 
 	public JButton getbtn1euro() {
@@ -349,7 +351,7 @@ public class Pagar extends JPanel {
 	}
 
 	public void setbtn1euro() {
-		this.btn1euro.setText("1€");
+		this.btn1euro.setText("1Â€");
 	}
 
 	public JButton getbtnDevolver() {
