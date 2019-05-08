@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.util.Date;
 
 import javax.swing.JLabel;
 import javax.swing.ButtonGroup;
@@ -15,6 +16,7 @@ import javax.swing.JComboBox;
 import javax.swing.JSpinner;
 import com.toedter.calendar.JCalendar;
 import java.awt.Dimension;
+import javax.swing.SpinnerNumberModel;
 
 
 
@@ -49,7 +51,8 @@ public class Inicio extends JPanel {
 	        super.setSize(dim);
 	        super.setVisible(true);
 		
-	        
+	       
+	    
 		btn_buscar_inicio = new JButton("Buscar");
 		btn_buscar_inicio.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		btn_buscar_inicio.setBounds(213, 349, 78, 23);
@@ -75,19 +78,21 @@ public class Inicio extends JPanel {
 		grupo1.add(btnCasa);
 		
 		JLabel lblPrecioMinimo = new JLabel("Precio minimo:");
-		lblPrecioMinimo.setBounds(139, 111, 85, 14);
+		lblPrecioMinimo.setBounds(24, 111, 85, 14);
 		add(lblPrecioMinimo);
 	
 		JLabel lblPrecioMaximo = new JLabel("Precio Maximo:");
-		lblPrecioMaximo.setBounds(24, 111, 98, 14);
+		lblPrecioMaximo.setBounds(134, 111, 98, 14);
 		add(lblPrecioMaximo);
 		
 		 spinner_minimo = new JSpinner();
-		spinner_minimo.setBounds(185, 135, 39, 20);
+		 spinner_minimo.setModel(new SpinnerNumberModel(new Integer(0), new Integer(0), null, new Integer(1)));
+		spinner_minimo.setBounds(70, 135, 39, 20);
 		add(spinner_minimo);
 		
 		spinner_maximo = new JSpinner();
-		spinner_maximo.setBounds(68, 135, 39, 20);
+		spinner_maximo.setModel(new SpinnerNumberModel(new Integer(0), new Integer(0), null, new Integer(1)));
+		spinner_maximo.setBounds(178, 135, 39, 20);
 		add(spinner_maximo);
 		
 		txtAquiVaEl = new JTextField();
@@ -108,15 +113,18 @@ public class Inicio extends JPanel {
 		calendar_entrada.setBounds(24, 185, 184, 153);
 		add(calendar_entrada);
 		
+		
 		calendar_salida = new JCalendar();
 		calendar_salida.setBounds(297, 185, 184, 153);
 		add(calendar_salida);
 		
+		 
 		JLabel lblNios = new JLabel("Ni\u00F1os:");
 		lblNios.setBounds(245, 111, 56, 14);
 		add(lblNios);
 		
 		spinner_ninios = new JSpinner();
+		spinner_ninios.setModel(new SpinnerNumberModel(new Integer(0), new Integer(0), null, new Integer(1)));
 		spinner_ninios.setBounds(262, 135, 29, 20);
 		add(spinner_ninios);
 		
@@ -125,6 +133,7 @@ public class Inicio extends JPanel {
 		add(lblAdultos);
 		
 		spinner_adultos = new JSpinner();
+		spinner_adultos.setModel(new SpinnerNumberModel(new Integer(0), new Integer(0), null, new Integer(1)));
 		spinner_adultos.setBounds(318, 135, 29, 20);
 		add(spinner_adultos);
 		
@@ -133,6 +142,7 @@ public class Inicio extends JPanel {
 		add(lblHabitaciones);
 		
 		spinner_habita = new JSpinner();
+		spinner_habita.setModel(new SpinnerNumberModel(new Integer(0), new Integer(0), null, new Integer(1)));
 		spinner_habita.setBounds(398, 135, 29, 20);
 		add(spinner_habita);
 		
