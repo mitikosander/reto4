@@ -34,8 +34,8 @@ public class Inicio extends JPanel {
 	private JRadioButton btnCasa;
 	private JSpinner spinner_minimo;
 	private JSpinner spinner_maximo;
-	private JCalendar calendar_entrada;
-	private JCalendar calendar_salida;
+	public static JCalendar calendar_entrada;
+	public static JCalendar calendar_salida;
 	private JSpinner spinner_ninios;
 	private JSpinner spinner_adultos;
 	private JSpinner spinner_habita;
