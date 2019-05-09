@@ -152,10 +152,13 @@ public class Metodos {
 	    Date entrada = vista.Inicio.calendar_entrada.getDate();
         Date salida = vista.Inicio.calendar_salida.getDate();
         
-        if() {
+        if(entrada.before(salida)) {
+        	//esta bien, la fecha de entrada es antes de el de salida
+        	return true;
         	
         }else {
-        	
+        	//esta mal, la fecha de entrada es mas tarde que el de la salida y eso es imposible
+        	return false;
         }
         
 	}
