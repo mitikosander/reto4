@@ -11,9 +11,9 @@ public class Fitxero {
 	protected static PreparedStatement statement = null;
 	protected static ResultSet rs = null;
 
-	static String pass="root";
-	static String user="root1";
-	static String nombre="root1";
+	static String pass="koldo";
+	static String user="koldo";
+	static String nombre="reto4";
 	static String server="127.0.0.1";
 	static String URL="jdbc:mysql://"+server+":3306/"+nombre+"?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 	

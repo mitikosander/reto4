@@ -6,10 +6,6 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 
 public class Reserva extends JPanel {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private JTextField tf_nombre_reserva;
 	private JTextField tf_tipo_pagar;
 	private JTextField tf_datos_reserva;

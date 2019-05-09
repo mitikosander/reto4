@@ -8,8 +8,6 @@ public class Modelo {
 	private Apartamento apartamento;
 	private Alojamiento alojamiento;
 	private BBDD basededatos;
-	
-	
 	public Modelo() {
 		metodos=new Metodos();
 		casa=new Casa();

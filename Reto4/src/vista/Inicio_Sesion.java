@@ -8,14 +8,11 @@ import javax.swing.JButton;
 import javax.swing.JPasswordField;
 
 public class Inicio_Sesion extends JPanel {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private JTextField tf_Usuario_Inicio_Sesion;
 	private JPasswordField pf_Contra_Inicio_Sesion;
 	private JButton btnAceptar_Inicio_Sesion;
 	private JButton btnCancelar_Inicio_Sesion;
+	private JButton btnRegistro;
 
 	/**
 	 * Create the panel.
@@ -42,16 +39,20 @@ public class Inicio_Sesion extends JPanel {
 		add(lblContrasea);
 		
 		btnAceptar_Inicio_Sesion = new JButton("Aceptar");
-		btnAceptar_Inicio_Sesion.setBounds(243, 184, 89, 23);
+		btnAceptar_Inicio_Sesion.setBounds(307, 184, 89, 23);
 		add(btnAceptar_Inicio_Sesion);
 		
 		btnCancelar_Inicio_Sesion = new JButton("Cancelar");
-		btnCancelar_Inicio_Sesion.setBounds(81, 184, 89, 23);
+		btnCancelar_Inicio_Sesion.setBounds(25, 184, 113, 23);
 		add(btnCancelar_Inicio_Sesion);
 		
 		pf_Contra_Inicio_Sesion = new JPasswordField();
 		pf_Contra_Inicio_Sesion.setBounds(188, 130, 86, 17);
 		add(pf_Contra_Inicio_Sesion);
+		
+		btnRegistro = new JButton("Registro");
+		btnRegistro.setBounds(164, 181, 115, 29);
+		add(btnRegistro);
 
 	}
 
@@ -86,5 +87,14 @@ public class Inicio_Sesion extends JPanel {
 	public void setBtnCancelar_Inicio_Sesion(JButton btnCancelar_Inicio_Sesion) {
 		this.btnCancelar_Inicio_Sesion = btnCancelar_Inicio_Sesion;
 	}
+
+	public JButton getBtnRegistro() {
+		return btnRegistro;
+	}
+
+	public void setBtnRegistro(JButton btnRegistro) {
+		this.btnRegistro = btnRegistro;
+	}
+	
 	
 }
