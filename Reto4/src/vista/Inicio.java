@@ -7,8 +7,6 @@ import javax.swing.JButton;
 
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.GridLayout;
-import java.util.Date;
 
 import javax.swing.JLabel;
 import javax.swing.ButtonGroup;
@@ -16,8 +14,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JComboBox;
 import javax.swing.JSpinner;
 import com.toedter.calendar.JCalendar;
-import java.awt.Dimension;
-import javax.swing.SpinnerNumberModel;
+
 
 
 
@@ -36,20 +33,17 @@ public class Inicio extends JPanel {
 	private JRadioButton rdbtnCasaRural;
 	private JCalendar calendar_entrada;
 	private JCalendar calendar_salida;
-	private JComboBox combo_ubicacion;
 	private JButton btnseleccionar;
 	private JRadioButton btnApartamento;
 	private JRadioButton btnHotel;
 	private JRadioButton btnCasa;
 	private JSpinner spinner_minimo;
 	private JSpinner spinner_maximo;
-	public static JCalendar calendar_entrada;
-	public static JCalendar calendar_salida;
 	private JSpinner spinner_ninios;
 	private JSpinner spinner_adultos;
 	private JSpinner spinner_habita;
 	private JComboBox<String> combo_ubicacion;
-  private Dimension dim;
+	private Dimension dim;
 
 
 	/**
@@ -125,7 +119,7 @@ public class Inicio extends JPanel {
 		add(calendar_salida);
 		
 
-		combo_ubicacion = new JComboBox();
+		combo_ubicacion = new JComboBox<String>();
 		combo_ubicacion.setBounds(161, 144, 158, 23);
 		add(combo_ubicacion);
 		
@@ -267,7 +261,7 @@ public class Inicio extends JPanel {
 	public JButton getBtnseleccionar() {
 		return btnseleccionar;
   }
-	public JComboBox<String> getCombo_ubicacion() {
+	public JComboBox<String> getCombo_ubicacion1() {
 		return combo_ubicacion;
 
 	}
@@ -278,13 +272,13 @@ public class Inicio extends JPanel {
 	}
 
 
-	public JComboBox getCombo_ubicacion() {
+	public JComboBox<String> getCombo_ubicacion() {
 		return combo_ubicacion;
 	}
 
 
 
-	public void setCombo_ubicacion(JComboBox combo_ubicacion) {
+	public void setCombo_ubicacion(JComboBox<String> combo_ubicacion) {
 		this.combo_ubicacion = combo_ubicacion;
 	}
 

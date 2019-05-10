@@ -68,55 +68,31 @@ public class Controlador {
 		
 		vista.getInicio().getBtn_buscar_inicio().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				// Tras la busqueda inicial vamos a la pantall de seleccion de hoteles
-				//nombreubicacion = (vista.getInicio().getCombo_ubicacion().getSelectedItem().toString());		
-				//rellenarComboAlojamientos();
+				
 				if(vista.getInicio().getRdbtnHotel().isSelected()) {
 					vista.mostrarPantalla(vista.getListahoteles());
 				
 				//Usamos el metodo que cargara los hoteles de la ubicacion seleccionada
 				DefaultTableModel modelos=modelo.getMetodos().cargarTablahoteles((String) vista.getInicio().getCombo_ubicacion().getSelectedItem());
-				
 				vista.getListahoteles().getTable().setModel(modelos);
-				}else {
-					if(vista.getInicio().getRdbtnApartamento().isSelected()) {
+				}else if(vista.getInicio().getRdbtnApartamento().isSelected()) {
 						vista.mostrarPantalla(vista.getListahoteles());
 						
 						//Usamos el metodo que cargara los hoteles de la ubicacion seleccionada
 						DefaultTableModel modelos=modelo.getMetodos().cargarTablaapartamentos((String) vista.getInicio().getCombo_ubicacion().getSelectedItem());
 						
 						vista.getListahoteles().getTable().setModel(modelos);
-					}else {
+					}else if(vista.getInicio().getRdbtnCasaRural().isSelected()){
 						vista.mostrarPantalla(vista.getListahoteles());
 						
 						//Usamos el metodo que cargara los hoteles de la ubicacion seleccionada
 						DefaultTableModel modelos=modelo.getMetodos().cargarTablahoteles((String) vista.getInicio().getCombo_ubicacion().getSelectedItem());
 						
 						vista.getListahoteles().getTable().setModel(modelos);
-						}
 				}
-				
-							}
-		});
-		
-		/*vista.getListahoteles().getBtnAceptar().addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				// Tras la busqueda inicial vamos a la pantall de seleccion de hoteles
-				vista.mostrarPantalla(vista.getListahoteles());
-
-				rellenarprecios();
-				vista.getListahoteles().getTextField_precio().setText(Double.toString(precioHotel));
-				modelo.getMetodos().modificarfichero();
-
-				
-				/*Guardamos el modelo de la tabla y despues 
-				Usamos el metodo que cargara los hoteles de la ubicacion seleccionada*/
-				TableModel modelos=modelo.getMetodos().cargarTablaAlojamientos((String) vista.getInicio().getCombo_ubicacion().getSelectedItem());
-				
-				vista.getListahoteles().getTable().setModel(modelos);
-
 			}
 		});
+		
 		
 		
 		vista.getListahoteles().getBtnaceptar_mostrar_lista().addActionListener(new ActionListener() {
@@ -130,7 +106,7 @@ public class Controlador {
 
 			}
 		});
-*/
+
 		
 		
 		
@@ -310,32 +286,14 @@ public class Controlador {
 
 		for (int i = 0; i < ciudad.size(); i++) {
 			vista.getInicio().getCombo_ubicacion().addItem(ciudad.get(i));
-
-		});
-	}
-		
-	
-	
-		
-		
-	
-	public void SumarIntroducido(double cantidad) {
-		double TotalIntroducido = 0;
-		double cambios=0;
-		double Total=0;
-		TotalIntroducido = TotalIntroducido + cantidad;
-		vista.getPagar().gettxtIntroducido().setText(Double.toString(TotalIntroducido));
-		// Datos.sacarResto=Datos.Total-Datos.TotalIntroducido;
-		if (Total > TotalIntroducido) {
-			vista.getPagar().gettxtIntroducido().setText(Double.toString(0));
-
-		} else {
-			vista.getPagar().gettxtIntroducido().setText(Double.toString(TotalIntroducido - Total));
-			cambios = TotalIntroducido - Total;
-
 		}
-
 	}
+	
+	
+		
+		
+	
+
 	private void rellenarComboCiudadesapartamentos() {
 		// Sacar las lineas de la BBDD y rellenar el combobox
 		// 1.Sacar datos de la BBDD
@@ -365,8 +323,8 @@ public class Controlador {
 			vista.getInicio().getCombo_ubicacion().addItem(nombreParadas.get(i));
 			}
 
+		}
 	}
-	
 
 	private void rellenarComboCiudadescasas() {
 		// Sacar las lineas de la BBDD y rellenar el combobox
@@ -396,16 +354,12 @@ public class Controlador {
 			vista.mostrarPantalla(vista.getInicio_sesion());
 		}
 	}
-	private void rellenarresumendatos() {
-		
-	}
 	
-
 	
 	
 	public void SumarIntroducido(double cantidad) {
 		Introducido=Introducido+cantidad;
-		vista.getPagar().gettextField_1().setText(Double.toString(Introducido));
+		vista.getPagar().gettxtIntroducido().setText(Double.toString(Introducido));
 		//Datos.sacarResto=Datos.Total-Datos.TotalIntroducido;
 		if(preciototal > Introducido) {
 			vista.getPagar().gettextField_2().setText(Double.toString(0));
@@ -415,7 +369,10 @@ public class Controlador {
 					;
 			vista.getPagar().gettextField_2().setText(Double.toString(Adevolver));
 			
+			}
 		}
-	}
-
+	
 }
+	
+
+	
