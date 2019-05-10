@@ -8,6 +8,8 @@ public class Modelo {
 	private Apartamento apartamento;
 	private Alojamiento alojamiento;
 	private BBDD basededatos;
+	private TableModel modelotabla;
+	
 	public Modelo() {
 		metodos=new Metodos();
 		casa=new Casa();
@@ -15,10 +17,11 @@ public class Modelo {
 		apartamento=new Apartamento();
 		alojamiento=new Alojamiento();
 		basededatos= new BBDD();
+		modelotabla=new TableModel();
 	}
 	
 	
-	//añadimos los getters y setters
+	//aÃ±adimos los getters y setters
 	public Metodos getMetodos() {
 		return metodos;
 	}
@@ -55,4 +58,13 @@ public class Modelo {
 	public void setBasededatos(BBDD basededatos) {
 		this.basededatos = basededatos;
 	}
+	public TableModel getModelotabla() {
+		return modelotabla;
+	}
+
+
+	public void setModelotabla(TableModel modelotabla) {
+		this.modelotabla = modelotabla;
+	}
+	
 }

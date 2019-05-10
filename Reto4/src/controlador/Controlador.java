@@ -5,21 +5,27 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import java.util.HashSet;
+import java.util.Set;
+
+
 import javax.swing.table.DefaultTableModel;
 
 import modelo.Alojamiento;
 import modelo.Cliente;
 import modelo.Metodos;
 import modelo.Modelo;
+import modelo.TableModel;
 import vista.Vista;
 
 public class Controlador {
+	
 	private static Vista vista;
 	private Modelo modelo;
+
 	private ArrayList<modelo.Alojamiento> alojamientos;
 	public double Adevolver = 0;
 	public double Introducido = 0;
@@ -27,6 +33,7 @@ public class Controlador {
 	public String  preciotabla="";
 	public String nombrehotel = "";
 	public String nombreubicacion = "";
+
 
 	public Controlador(Vista vista, Modelo modelo) {
 		Controlador.vista = vista;
@@ -96,15 +103,25 @@ public class Controlador {
 			public void actionPerformed(ActionEvent arg0) {
 				// Tras la busqueda inicial vamos a la pantall de seleccion de hoteles
 				vista.mostrarPantalla(vista.getListahoteles());
+
 				rellenarprecios();
 				vista.getListahoteles().getTextField_precio().setText(Double.toString(precioHotel));
 				modelo.getMetodos().modificarfichero();
+
+				
+				/*Guardamos el modelo de la tabla y despues 
+				Usamos el metodo que cargara los hoteles de la ubicacion seleccionada*/
+				TableModel modelos=modelo.getMetodos().cargarTablaAlojamientos((String) vista.getInicio().getCombo_ubicacion().getSelectedItem());
+				
+				vista.getListahoteles().getTable().setModel(modelos);
+
 			}
 		});
 		
 		
 		vista.getListahoteles().getBtnaceptar_mostrar_lista().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+
 				// Tras la busqueda inicial vamos a la pantall de seleccion de hoteles
 				nombrehotel = (vista.getListahoteles().getcombo_alojamientos().getSelectedItem().toString());
 				rellenarprecios();
@@ -116,10 +133,15 @@ public class Controlador {
 */
 		
 		
+		
+		
+		
+		
 		vista.getListahoteles().getBtnCancelar_mostrar_lista().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				// Tras la busqueda inicial vamos a la pantall de seleccion de hoteles
 				vista.mostrarPantalla(vista.getInicio());
+
 
 			}
 		});
@@ -130,8 +152,22 @@ public class Controlador {
 				vista.mostrarPantalla(vista.getHotel_seleccionado());
 				vista.getHotel_seleccionado().gettF_nombre_Hotel().setText(datotabla);*/
 				vista.mostrarPantalla(vista.getInicio_sesion());
+
+				
+				//guardamos los datos de nuestra seleccion y llamamos al metodo para coger el precio del hotel seleccionado desde la base de datos
+				int selectedRow=vista.getListahoteles().getTable().getSelectedRow();
+				int selectedColumn=vista.getListahoteles().getTable().getSelectedColumn();
+				String text=(String) vista.getListahoteles().getTable().getValueAt(selectedRow, selectedColumn);
+				double precioPedido=modelo.getMetodos().cargarPrecioHotelSelecc(text);
+				
+				//asignamos a la pantalla del pagos el valor del precio
+				vista.getPagar().gettxtAPagar().setText(Double.toString(precioPedido));
+				
+
 			}
+				
 		});
+
 		vista.getPagar().getbtnCancelar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				// Tras la busqueda inicial vamos a la pantall de seleccion de hoteles
@@ -174,6 +210,12 @@ public class Controlador {
 		vista.getHotel_seleccionado().getBtnCancelar_Hotel().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				// Tras la busqueda inicial vamos a la pantall de seleccion de hoteles
+				vista.mostrarPantalla(vista.getInicio());
+
+
+		
+		vista.getPagar().getbtnCancelar().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
 				vista.mostrarPantalla(vista.getInicio());
 
 			}
@@ -251,6 +293,7 @@ public class Controlador {
 			}
 				});
 			}
+
 	
 
 
@@ -267,12 +310,36 @@ public class Controlador {
 
 		for (int i = 0; i < ciudad.size(); i++) {
 			vista.getInicio().getCombo_ubicacion().addItem(ciudad.get(i));
+
+		});
+	}
+		
+	
+	
+		
+		
+	
+	public void SumarIntroducido(double cantidad) {
+		double TotalIntroducido = 0;
+		double cambios=0;
+		double Total=0;
+		TotalIntroducido = TotalIntroducido + cantidad;
+		vista.getPagar().gettxtIntroducido().setText(Double.toString(TotalIntroducido));
+		// Datos.sacarResto=Datos.Total-Datos.TotalIntroducido;
+		if (Total > TotalIntroducido) {
+			vista.getPagar().gettxtIntroducido().setText(Double.toString(0));
+
+		} else {
+			vista.getPagar().gettxtIntroducido().setText(Double.toString(TotalIntroducido - Total));
+			cambios = TotalIntroducido - Total;
+
 		}
 
 	}
 	private void rellenarComboCiudadesapartamentos() {
 		// Sacar las lineas de la BBDD y rellenar el combobox
 		// 1.Sacar datos de la BBDD
+
 
 		ArrayList<String> ciudad = modelo.getMetodos().cargarciudadesapartamentos();
 
@@ -282,8 +349,25 @@ public class Controlador {
 			vista.getInicio().getCombo_ubicacion().addItem(ciudad.get(i));
 		}
 
+
+		ArrayList<String> nombreParadas =modelo.getMetodos().cargarciudades();
+		
+		//Eliminar las paradas repetidas pasando a un Set que no admite repetidos
+		
+		Set<String> hs=new HashSet<>();
+		hs.addAll(nombreParadas);
+		nombreParadas.clear();
+		nombreParadas.addAll(hs);
+		
+		// Rellenar las paradas
+		for (int i = 0; i <nombreParadas.size(); i++) {
+			if(nombreParadas.get(i) !=null) {
+			vista.getInicio().getCombo_ubicacion().addItem(nombreParadas.get(i));
+			}
+
 	}
 	
+
 	private void rellenarComboCiudadescasas() {
 		// Sacar las lineas de la BBDD y rellenar el combobox
 		// 1.Sacar datos de la BBDD
@@ -333,6 +417,5 @@ public class Controlador {
 			
 		}
 	}
-
 
 }
