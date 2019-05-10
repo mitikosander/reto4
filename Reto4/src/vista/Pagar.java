@@ -10,7 +10,6 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 
-
 public class Pagar extends JPanel {
 	private JTextField txtAPagar;
 	private JTextField txtIntroducido;
@@ -36,9 +35,6 @@ public class Pagar extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-
-	private static final long serialVersionUID = 1L;
-	
 	public Pagar() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{33, 60, 60, 60, 60, 60, 60, 0};
