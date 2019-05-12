@@ -11,6 +11,10 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 
 public class Pagar extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField txtAPagar;
 	private JTextField txtIntroducido;
 	private JTextField txtDevolver;
@@ -59,15 +63,15 @@ public class Pagar extends JPanel {
 		add(lblTotalAPagar, gbc_lblTotalAPagar);
 		
 
-		textField = new JTextField();
+		txtAPagar = new JTextField();
 		GridBagConstraints gbc_textField = new GridBagConstraints();
 		gbc_textField.fill = GridBagConstraints.BOTH;
 		gbc_textField.insets = new Insets(0, 0, 5, 5);
 		gbc_textField.gridwidth = 2;
 		gbc_textField.gridx = 4;
 		gbc_textField.gridy = 1;
-		add(textField, gbc_textField);
-		textField.setColumns(10);
+		add(txtAPagar, gbc_textField);
+		txtAPagar.setColumns(10);
 		
 		lblPagado = new JLabel("Total Introducido :");
 		GridBagConstraints gbc_lblPagado = new GridBagConstraints();
@@ -80,15 +84,15 @@ public class Pagar extends JPanel {
 		add(lblPagado, gbc_lblPagado);
 		
 
-		textField_1 = new JTextField();
+		txtIntroducido = new JTextField();
 		GridBagConstraints gbc_textField_1 = new GridBagConstraints();
 		gbc_textField_1.fill = GridBagConstraints.BOTH;
 		gbc_textField_1.insets = new Insets(0, 0, 5, 5);
 		gbc_textField_1.gridwidth = 2;
 		gbc_textField_1.gridx = 4;
 		gbc_textField_1.gridy = 2;
-		add(textField_1, gbc_textField_1);
-		textField_1.setColumns(10);
+		add(txtIntroducido, gbc_textField_1);
+		txtIntroducido.setColumns(10);
 
 		
 		lblADevolver = new JLabel("A devolver :");
@@ -113,15 +117,15 @@ public class Pagar extends JPanel {
 			}
 		});
 		
-		textField_2 = new JTextField();
+		txtDevolver = new JTextField();
 		GridBagConstraints gbc_textField_2 = new GridBagConstraints();
 		gbc_textField_2.fill = GridBagConstraints.BOTH;
 		gbc_textField_2.insets = new Insets(0, 0, 5, 5);
 		gbc_textField_2.gridwidth = 2;
 		gbc_textField_2.gridx = 4;
 		gbc_textField_2.gridy = 3;
-		add(textField_2, gbc_textField_2);
-		textField_2.setColumns(10);
+		add(txtDevolver, gbc_textField_2);
+		txtDevolver.setColumns(10);
 		GridBagConstraints gbc_btn50euro = new GridBagConstraints();
 		gbc_btn50euro.fill = GridBagConstraints.BOTH;
 		gbc_btn50euro.insets = new Insets(0, 0, 5, 5);
