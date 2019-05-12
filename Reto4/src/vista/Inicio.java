@@ -2,12 +2,11 @@ package vista;
 
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.SpinnerNumberModel;
 import javax.swing.JButton;
 
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.GridLayout;
-import java.util.Date;
 
 import javax.swing.JLabel;
 import javax.swing.ButtonGroup;
@@ -15,8 +14,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JComboBox;
 import javax.swing.JSpinner;
 import com.toedter.calendar.JCalendar;
-import java.awt.Dimension;
-import javax.swing.SpinnerNumberModel;
+
 
 
 
@@ -29,18 +27,24 @@ public class Inicio extends JPanel {
 	private JTextField txtBuscador;
 	private JTextField txtAquiVaEl;
 	private JButton btn_buscar_inicio;
+
+	private JRadioButton rdbtnApartamento;
+	private JRadioButton rdbtnHotel;
+	private JRadioButton rdbtnCasaRural;
+	private JCalendar calendar_entrada;
+	private JCalendar calendar_salida;
+	private JButton btnseleccionar;
 	private JRadioButton btnApartamento;
 	private JRadioButton btnHotel;
 	private JRadioButton btnCasa;
 	private JSpinner spinner_minimo;
 	private JSpinner spinner_maximo;
-	public static JCalendar calendar_entrada;
-	public static JCalendar calendar_salida;
 	private JSpinner spinner_ninios;
 	private JSpinner spinner_adultos;
 	private JSpinner spinner_habita;
 	private JComboBox<String> combo_ubicacion;
-    private Dimension dim;
+	private Dimension dim;
+
 
 	/**
 	 * Create the panel.
@@ -57,11 +61,7 @@ public class Inicio extends JPanel {
 		btn_buscar_inicio.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		btn_buscar_inicio.setBounds(213, 349, 78, 23);
 		add(btn_buscar_inicio);
-		
 
-		
-		btnHotel = new JRadioButton("Hotel");
-		btnHotel.setBounds(116, 115, 60, 23);
 
 		
 		btnApartamento = new JRadioButton("Apartamento");
@@ -118,6 +118,23 @@ public class Inicio extends JPanel {
 		calendar_salida.setBounds(297, 185, 184, 153);
 		add(calendar_salida);
 		
+
+		combo_ubicacion = new JComboBox<String>();
+		combo_ubicacion.setBounds(161, 144, 158, 23);
+		add(combo_ubicacion);
+		
+		rdbtnHotel = new JRadioButton("hotel");
+		rdbtnHotel.setBounds(44, 85, 83, 29);
+		add(rdbtnHotel);
+		
+		rdbtnApartamento = new JRadioButton("apartamento");
+		rdbtnApartamento.setBounds(161, 85, 155, 29);
+		add(rdbtnApartamento);
+		
+		rdbtnCasaRural = new JRadioButton("Casa Rural");
+		rdbtnCasaRural.setBounds(323, 85, 155, 29);
+		add(rdbtnCasaRural);
+
 		 
 		JLabel lblNios = new JLabel("Ni\u00F1os:");
 		lblNios.setBounds(245, 111, 56, 14);
@@ -145,11 +162,11 @@ public class Inicio extends JPanel {
 		spinner_habita.setModel(new SpinnerNumberModel(new Integer(0), new Integer(0), null, new Integer(1)));
 		spinner_habita.setBounds(398, 135, 29, 20);
 		add(spinner_habita);
-		
-		combo_ubicacion = new JComboBox<String>();
-		combo_ubicacion.setBounds(134, 77, 158, 23);
-		add(combo_ubicacion);
 
+		
+		btnseleccionar = new JButton("seleccionar");
+		btnseleccionar.setBounds(391, 141, 115, 29);
+		add(btnseleccionar);
 
 	}
 
@@ -185,54 +202,6 @@ public class Inicio extends JPanel {
 	}
 
 
-	public JRadioButton getBtnApartamento() {
-		return btnApartamento;
-	}
-
-
-	public void setBtnApartamento(JRadioButton btnApartamento) {
-		this.btnApartamento = btnApartamento;
-	}
-
-
-	public JRadioButton getBtnHotel() {
-		return btnHotel;
-	}
-
-
-	public void setBtnHotel(JRadioButton btnHotel) {
-		this.btnHotel = btnHotel;
-	}
-
-
-	public JRadioButton getBtnCasa() {
-		return btnCasa;
-	}
-
-
-	public void setBtnCasa(JRadioButton btnCasa) {
-		this.btnCasa = btnCasa;
-	}
-
-
-	public JSpinner getSpinner_minimo() {
-		return spinner_minimo;
-	}
-
-
-	public void setSpinner_minimo(JSpinner spinner_minimo) {
-		this.spinner_minimo = spinner_minimo;
-	}
-
-
-	public JSpinner getSpinner_maximo() {
-		return spinner_maximo;
-	}
-
-
-	public void setSpinner_maximo(JSpinner spinner_maximo) {
-		this.spinner_maximo = spinner_maximo;
-	}
 
 
 	public JCalendar getCalendar_entrada() {
@@ -255,33 +224,51 @@ public class Inicio extends JPanel {
 	}
 
 
-	public JSpinner getSpinner_ninios() {
-		return spinner_ninios;
+	
+
+
+	public JRadioButton getRdbtnApartamento() {
+		return rdbtnApartamento;
 	}
 
 
-	public void setSpinner_ninios(JSpinner spinner_ninios) {
-		this.spinner_ninios = spinner_ninios;
+	public void setRdbtnApartamento(JRadioButton rdbtnApartamento) {
+		this.rdbtnApartamento = rdbtnApartamento;
 	}
 
 
-	public JSpinner getSpinner_adultos() {
-		return spinner_adultos;
+	public JRadioButton getRdbtnHotel() {
+		return rdbtnHotel;
 	}
 
 
-	public void setSpinner_adultos(JSpinner spinner_adultos) {
-		this.spinner_adultos = spinner_adultos;
+	public void setRdbtnHotel(JRadioButton rdbtnHotel) {
+		this.rdbtnHotel = rdbtnHotel;
 	}
 
 
-	public JSpinner getSpinner_habita() {
-		return spinner_habita;
+	public JRadioButton getRdbtnCasaRural() {
+		return rdbtnCasaRural;
 	}
 
 
-	public void setSpinner_habita(JSpinner spinner_habita) {
-		this.spinner_habita = spinner_habita;
+	public void setRdbtnCasaRural(JRadioButton rdbtnCasaRural) {
+		this.rdbtnCasaRural = rdbtnCasaRural;
+	}
+
+
+
+	public JButton getBtnseleccionar() {
+		return btnseleccionar;
+  }
+	public JComboBox<String> getCombo_ubicacion1() {
+		return combo_ubicacion;
+
+	}
+
+
+	public void setBtnseleccionar(JButton btnseleccionar) {
+		this.btnseleccionar = btnseleccionar;
 	}
 
 
@@ -290,9 +277,9 @@ public class Inicio extends JPanel {
 	}
 
 
+
 	public void setCombo_ubicacion(JComboBox<String> combo_ubicacion) {
 		this.combo_ubicacion = combo_ubicacion;
 	}
-	
-	
+
 }

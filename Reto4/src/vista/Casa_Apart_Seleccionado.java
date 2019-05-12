@@ -1,15 +1,12 @@
 package vista;
 
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 public class Casa_Apart_Seleccionado extends JPanel {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private JTextField tf_ubicacion_CasaApart;
 	private JTextField tf_mcuadrados_CasaApart;
 	private JTextField tf_ncamas_CasaApart;

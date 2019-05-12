@@ -1,7 +1,7 @@
 package vista;
 
 import javax.swing.JPanel;
-
+import javax.swing.JTextArea;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -9,10 +9,6 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 public class Hotel_Seleccionado extends JPanel {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private JTextField tF_nombre_Hotel;
 	private JTextField tf_mc_Hotel;
 	private JTextField tf_ncamas_Hotel;
@@ -31,7 +27,7 @@ public class Hotel_Seleccionado extends JPanel {
 		setLayout(null);
 		
 		JLabel lblNombreDeHotel = new JLabel("Nombre de Hotel:");
-		lblNombreDeHotel.setBounds(84, 53, 89, 14);
+		lblNombreDeHotel.setBounds(84, 53, 140, 14);
 		add(lblNombreDeHotel);
 		
 		JLabel lblMetrosCuadrados = new JLabel("Metros cuadrados :");
@@ -63,7 +59,7 @@ public class Hotel_Seleccionado extends JPanel {
 		add(lblPrecio);
 		
 		tF_nombre_Hotel = new JTextField();
-		tF_nombre_Hotel.setBounds(189, 53, 86, 20);
+		tF_nombre_Hotel.setBounds(244, 53, 86, 20);
 		add(tF_nombre_Hotel);
 		tF_nombre_Hotel.setColumns(10);
 		

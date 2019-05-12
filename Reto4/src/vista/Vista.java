@@ -19,6 +19,7 @@ public class Vista {
 	private Reserva reserva;
 	
 	
+	
 	public Vista() {
 		//Aqui completamos la instancia del objeto para poder acceder a sus atributos
 		ventana=new Contenedor();
@@ -32,6 +33,7 @@ public class Vista {
 		hotel_seleccionado = new Hotel_Seleccionado();
 		inicio_sesion = new Inicio_Sesion();
 		reserva = new Reserva();
+		
 	}
 	
 	public  void mostrarPantalla(JPanel panel) {
@@ -129,5 +131,6 @@ public class Vista {
 	public void setReserva(Reserva reserva) {
 		this.reserva = reserva;
 	}
+
 
 }

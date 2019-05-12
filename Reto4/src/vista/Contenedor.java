@@ -10,9 +10,9 @@ public class Contenedor extends JFrame {
 	public JFrame frame;
 
 	public Contenedor() {	
-	setBounds(100, 100, 500, 425);
+	setBounds(150, 150, 600, 500);
 	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+	this.setLocationRelativeTo(null);
 	}
 
 	

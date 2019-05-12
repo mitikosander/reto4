@@ -21,7 +21,7 @@ public class Modelo {
 	}
 	
 	
-	//añadimos los getters y setters
+	//aÃ±adimos los getters y setters
 	public Metodos getMetodos() {
 		return metodos;
 	}
